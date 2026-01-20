@@ -1,0 +1,32 @@
+name: Slime ASMR Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Install ffmpeg
+        run: sudo apt-get install ffmpeg -y
+
+      - name: Install Python deps
+        run: pip install requests
+
+      - name: Generate audio
+        run: python scripts/generate_audio.py
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+
+      - name: Merge and loop
+        run: python scripts/merge_and_loop.py
+
+      - name: Upload outputs
+        uses: actions/upload-artifact@v4
+        with:
+          name: slime_outputs
+          path: final/
