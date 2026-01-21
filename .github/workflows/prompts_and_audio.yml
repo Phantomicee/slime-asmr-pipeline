@@ -1,0 +1,42 @@
+name: Prompts + Audio
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install deps
+        run: |
+          pip install openai requests
+
+      - name: Generate prompts (OpenAI)
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: ${{ secrets.OPENAI_MODEL }}
+          OPENAI_TEMPERATURE: ${{ secrets.OPENAI_TEMPERATURE }}
+        run: |
+          python scripts/generate_prompts_openai_v2.py
+
+      - name: Generate audio (ElevenLabs)
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: |
+          python scripts/generate_audio.py
+
+      - name: Upload prompts + audio
+        uses: actions/upload-artifact@v4
+        with:
+          name: prompts_and_audio
+          path: |
+            prompts/prompts_today.json
+            audio_raw/*.wav
