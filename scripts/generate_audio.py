@@ -1,58 +1,71 @@
-import os, json, sys
+# scripts/generate_audio.py
+from __future__ import annotations
+
+import json
+import os
+import re
+from pathlib import Path
+
 import requests
 
-PROMPTS_PATH = "prompts/prompts_today.json"
-AUDIO_DIR = "audio_raw"
-VIDEO_DIR = "video_raw"
+PROMPTS_PATH = Path("prompts/prompts_today.json")
+OUT_DIR = Path("audio_raw")
 
+# ElevenLabs endpoints verschillen per product. Deze gebruikt de "sound generation / SFX" stijl.
+# Als jouw account een andere endpoint vereist, dan faalt hij met 404/400 en dan passen we hem aan.
 ELEVEN_SFX_URL = "https://api.elevenlabs.io/v1/sound-generation"
 
-def list_mp4s():
-    files = [f for f in os.listdir(VIDEO_DIR) if f.lower().endswith(".mp4")]
-    files.sort(key=lambda f: os.path.getmtime(os.path.join(VIDEO_DIR, f)))
-    return files
+def sanitize_id(n: int) -> str:
+    return f"{n:02d}"
+
+def ensure_prompts():
+    if not PROMPTS_PATH.exists():
+        raise SystemExit(f"Missing {PROMPTS_PATH}. Run generate_prompts_openai_v2.py first.")
+    data = json.loads(PROMPTS_PATH.read_text(encoding="utf-8"))
+    if not isinstance(data, list) or len(data) == 0:
+        raise SystemExit("prompts_today.json is empty or not a list.")
+    return data
 
 def main():
-    api_key = os.environ.get("ELEVENLABS_API_KEY", "").strip()
+    api_key = os.getenv("ELEVENLABS_API_KEY")
     if not api_key:
-        print("Missing ELEVENLABS_API_KEY env var.")
-        sys.exit(1)
+        raise SystemExit("Missing ELEVENLABS_API_KEY in env/secrets.")
 
-    os.makedirs(AUDIO_DIR, exist_ok=True)
+    items = ensure_prompts()
+    OUT_DIR.mkdir(parents=True, exist_ok=True)
 
-    with open(PROMPTS_PATH, "r", encoding="utf-8") as f:
-        data = json.load(f)
+    headers = {
+        "xi-api-key": api_key,
+        "Content-Type": "application/json",
+        "Accept": "audio/wav",
+    }
 
-    shorts = data.get("shorts", [])
-    if len(shorts) < 1:
-        print("No shorts found in prompts_today.json")
-        sys.exit(1)
+    for item in items:
+        idx = int(item.get("id", 0) or 0)
+        if idx <= 0:
+            continue
 
-    mp4s = list_mp4s()
-    if len(mp4s) < len(shorts):
-        print(f"Not enough mp4 files in {VIDEO_DIR}. Found {len(mp4s)} but need {len(shorts)}.")
-        sys.exit(1)
+        prompt = item.get("audio_prompt", "").strip()
+        if not prompt:
+            raise SystemExit(f"Item id={idx} missing audio_prompt")
 
-    headers = {"xi-api-key": api_key, "Content-Type": "application/json"}
+        # ElevenLabs SFX generatie is doorgaans prompt + duration
+        payload = {
+            "text": prompt,
+            "duration_seconds": 8,
+        }
 
-    for i, item in enumerate(shorts):
-        sid = item["id"]
-        audio_prompt = item["audio_prompt"]
-        out_wav = os.path.join(AUDIO_DIR, f"{sid}.wav")
+        out_path = OUT_DIR / f"audio_{sanitize_id(idx)}.wav"
 
-        payload = {"text": audio_prompt, "duration_seconds": 5}
+        r = requests.post(ELEVEN_SFX_URL, headers=headers, json=payload, timeout=120)
+        if r.status_code >= 400:
+            raise SystemExit(
+                f"ElevenLabs error for id={idx}: {r.status_code}\n{r.text}\n"
+                f"Endpoint used: {ELEVEN_SFX_URL}"
+            )
 
-        r = requests.post(ELEVEN_SFX_URL, headers=headers, json=payload, timeout=180)
-        print(f"{sid}: status={r.status_code} content-type={r.headers.get('content-type')}")
-
-        if r.status_code != 200:
-            print("Error body:", r.text[:500])
-            sys.exit(1)
-
-        with open(out_wav, "wb") as f2:
-            f2.write(r.content)
-
-        print("Saved", out_wav)
+        out_path.write_bytes(r.content)
+        print(f"Wrote {out_path}")
 
 if __name__ == "__main__":
     main()
