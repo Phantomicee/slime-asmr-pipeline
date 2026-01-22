@@ -1,38 +1,29 @@
 [
   {
     "id": 1,
-    "surface": "glazed ceramic tile with luxury sheen",
-    "background": "minimalist studio with mixed warm/cool practical lights and soft bokeh, softly blurred",
-    "palette": "arctic teal + silver + midnight blue",
-    "palette_mode": "explicit",
-    "mood": "harmonious",
-    "slime_type": "pearlescent slime",
-    "hook_event": "fold-and-settle cycle",
-    "video_prompt": "Extreme macro close-up of thick pearlescent slime with subtle realistic shimmer on a glazed ceramic tile with luxury sheen. The background shows a minimalist studio with mixed warm and cool practical lights softly blurred into bokeh. The slime folds over itself in slow rounded waves, then settles repeatedly in calm hypnotic motion, maintaining a smooth glossy surface with no watery edges.",
-    "audio_prompt": "10 seconds of studio-clean, high fidelity sound starting with soft gentle impacts as the slime folds, followed by continuous smooth heavy glide and rounded fold textures without any sharp clicks or squeaks."
+    "surface": "polished obsidian stone with subtle warm practical lights",
+    "background": "calm stone room with warm ambient lighting, softly blurred",
+    "palette": "arctic teal with silver and midnight blue",
+    "slime_type": "thick glossy slime",
+    "video_prompt": "Extreme macro close-up of thick glossy arctic teal slime with silver and midnight blue hues flowing and folding slowly over polished obsidian stone under subtle warm practical lights, set against a softly blurred calm stone room with warm ambient lighting. The very cohesive, high-viscosity slime stretches into thick ribbons and rounded folds with slow deformation and delayed recovery, creating a calm, hypnotic motion.",
+    "audio_prompt": "Studio-clean, high-fidelity audio capturing the smooth, wet, slow folds and dense cohesive glide of thick glossy slime moving heavily and fluidly without any sharp or metallic sounds."
   },
   {
     "id": 2,
-    "surface": "handcrafted satin ceramic glaze",
-    "background": "calm stone room with warm ambient lighting and gentle depth, softly blurred",
-    "palette": "icy cyan + lilac + silver highlights",
-    "palette_mode": "explicit",
-    "mood": "high-contrast",
-    "slime_type": "thick glossy slime",
-    "hook_event": "single strong contact then calm glide",
-    "video_prompt": "Extreme macro close-up of very cohesive, high-viscosity thick glossy slime forming heavy ribbons and rounded folds on handcrafted satin ceramic glaze. The calm stone room background with warm ambient lighting and gentle depth is softly blurred. The slime makes a controlled initial strong but non-splashy contact, then slowly glides and folds with delayed recovery, avoiding thin edges or watery texture.",
-    "audio_prompt": "10 seconds of studio-clean, high fidelity audio with a brief, gentle but firm impact sound early, followed by continuous smooth, satisfying heavy glide and fold textures without harsh or cartoonish noises."
+    "surface": "champagne-toned brushed metal surface",
+    "background": "greenhouse corner with soft sunlight and plants, very blurred",
+    "palette": "jade green with pearl white and soft champagne gold",
+    "slime_type": "semi-translucent slime gel",
+    "video_prompt": "Extreme macro close-up of dense semi-translucent jade green slime gel with pearl white and soft champagne gold highlights slowly settling and moving as one thick cohesive mass across a champagne-toned brushed metal surface. Background shows a softly blurred greenhouse corner bathed in soft sunlight with lush plants. The slime exhibits visible depth with slow internal movement, stretching and compressing with weighty, deliberate motion.",
+    "audio_prompt": "Pure slime-only soundscape of smooth, slow, wet semi-translucent gel movement, dense and cohesive with subtle internal shifts, avoiding any sharp, metallic or extraneous noises."
   },
   {
     "id": 3,
-    "surface": "frosted glass plate with gentle edge highlights",
-    "background": "nighttime city lights through a window (bokeh), interior softly blurred",
-    "palette": "obsidian-dark with subtle iridescent highlights and deep color depth",
-    "palette_mode": "explicit",
-    "mood": "harmonious",
-    "slime_type": "fluffy glossy slime",
-    "hook_event": "slow ribbon pour",
-    "video_prompt": "Extreme macro close-up of soft pillowy fluffy glossy slime pouring as a thick cohesive ribbon from above onto frosted glass plate with gentle edge highlights. The background features nighttime city lights through a window softly blurred into warm bokeh. The slime ribbon slowly stretches, lands, compresses, then glides smoothly with rounded folds, maintaining semi-matte to soft gloss texture and cohesive body, never watery.",
-    "audio_prompt": "10 seconds of studio-clean, high fidelity sound with a gentle slow pouring impact early, followed by continuous soft, smooth glide and gentle fold textures without stiff or airy foam noises."
+    "surface": "warm onyx stone with translucent layers",
+    "background": "boutique hotel bathroom with marble and warm lamp glow, softly blurred",
+    "palette": "electric cyan with deep magenta and molten gold accents",
+    "slime_type": "creamy slime",
+    "video_prompt": "Extreme macro close-up of dense creamy slime in electric cyan, deep magenta, and molten gold slowly falling, spreading, and gently gliding over warm onyx stone with translucent layers. Set in a softly blurred boutique hotel bathroom featuring marble and warm lamp glow. The yogurt-like thick slime forms smooth, rounded soft folds with cohesive body and slow draping motion, creating a luxurious, calming effect.",
+    "audio_prompt": "High-fidelity studio recording of smooth, creamy slime sound with slow drape and gentle spreading, capturing soft wet folds and cohesive glide without any harsh or non-organic sounds."
   }
 ]
