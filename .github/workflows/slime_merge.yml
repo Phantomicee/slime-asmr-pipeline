@@ -1,0 +1,37 @@
+name: Slime Merge
+
+on:
+  workflow_dispatch:
+    inputs:
+      count:
+        description: "How many videos to process"
+        required: true
+        default: "3"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Install ffmpeg
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run merge script
+        run: |
+          python scripts/merge_av.py --count ${{ github.event.inputs.count }}
+
+      - name: Upload final videos
+        uses: actions/upload-artifact@v4
+        with:
+          name: final_videos
+          path: final
