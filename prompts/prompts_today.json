@@ -1,29 +1,29 @@
 [
   {
     "id": 1,
-    "surface": "polished obsidian stone with subtle warm practical lights",
+    "surface": "handcrafted satin ceramic glaze",
     "background": "calm stone room with warm ambient lighting, softly blurred",
-    "palette": "arctic teal with silver and midnight blue",
-    "slime_type": "thick glossy slime",
-    "video_prompt": "Extreme macro close-up of thick glossy arctic teal slime with silver and midnight blue hues flowing and folding slowly over polished obsidian stone under subtle warm practical lights, set against a softly blurred calm stone room with warm ambient lighting. The very cohesive, high-viscosity slime stretches into thick ribbons and rounded folds with slow deformation and delayed recovery, creating a calm, hypnotic motion.",
-    "audio_prompt": "Studio-clean, high-fidelity audio capturing the smooth, wet, slow folds and dense cohesive glide of thick glossy slime moving heavily and fluidly without any sharp or metallic sounds."
+    "palette": "honey amber with espresso brown and warm copper",
+    "slime_type": "creamy slime",
+    "video_prompt": "Extreme macro close-up of dense creamy slime with yogurt-like thickness slowly draping and folding in rounded soft folds over handcrafted satin ceramic glaze. Background is a softly blurred calm stone room with warm ambient lighting. Palette features honey amber, espresso brown, and warm copper tones. The cohesive slime flows and folds over itself in calm, hypnotic motion, emphasizing slow, gravity-driven movement on the premium surface.",
+    "audio_prompt": "Studio-clean, high-fidelity audio capturing smooth, wet, dense creamy slime movement with slow folds and cohesive glide. Soft, organic slime textures only; no knocking, banging, or metallic sounds."
   },
   {
     "id": 2,
-    "surface": "champagne-toned brushed metal surface",
+    "surface": "smoked glass slab with inner light depth",
     "background": "greenhouse corner with soft sunlight and plants, very blurred",
-    "palette": "jade green with pearl white and soft champagne gold",
-    "slime_type": "semi-translucent slime gel",
-    "video_prompt": "Extreme macro close-up of dense semi-translucent jade green slime gel with pearl white and soft champagne gold highlights slowly settling and moving as one thick cohesive mass across a champagne-toned brushed metal surface. Background shows a softly blurred greenhouse corner bathed in soft sunlight with lush plants. The slime exhibits visible depth with slow internal movement, stretching and compressing with weighty, deliberate motion.",
-    "audio_prompt": "Pure slime-only soundscape of smooth, slow, wet semi-translucent gel movement, dense and cohesive with subtle internal shifts, avoiding any sharp, metallic or extraneous noises."
+    "palette": "arctic teal with silver and midnight blue",
+    "slime_type": "thick glossy slime",
+    "video_prompt": "Extreme macro close-up of very cohesive, high-viscosity thick glossy slime stretching, falling, and spreading in thick ribbons and rounded folds over smoked glass slab with inner light depth. Background shows softly blurred greenhouse corner with soft sunlight and plants. Palette includes arctic teal, silver, and midnight blue. Slow deformation and delayed recovery highlight gravity-driven, slow, heavy, and satisfying slime motion on the premium surface.",
+    "audio_prompt": "Studio-clean, high-fidelity audio of thick glossy slime producing smooth, wet, slow, dense texture sounds with gentle stretching and spreading. Pure slime sounds only; no metallic or harsh noises."
   },
   {
     "id": 3,
-    "surface": "warm onyx stone with translucent layers",
-    "background": "boutique hotel bathroom with marble and warm lamp glow, softly blurred",
-    "palette": "electric cyan with deep magenta and molten gold accents",
-    "slime_type": "creamy slime",
-    "video_prompt": "Extreme macro close-up of dense creamy slime in electric cyan, deep magenta, and molten gold slowly falling, spreading, and gently gliding over warm onyx stone with translucent layers. Set in a softly blurred boutique hotel bathroom featuring marble and warm lamp glow. The yogurt-like thick slime forms smooth, rounded soft folds with cohesive body and slow draping motion, creating a luxurious, calming effect.",
-    "audio_prompt": "High-fidelity studio recording of smooth, creamy slime sound with slow drape and gentle spreading, capturing soft wet folds and cohesive glide without any harsh or non-organic sounds."
+    "surface": "brushed metal plate with soft reflections",
+    "background": "modern design kitchen with gentle reflections and bokeh highlights, softly blurred",
+    "palette": "emerald green with sapphire blue and bronze glints",
+    "slime_type": "semi-translucent slime gel",
+    "video_prompt": "Extreme macro close-up of semi-translucent, thick cohesive slime gel with visible depth slowly settling, stretching, and compressing as one mass across a brushed metal plate with soft reflections. Background is a softly blurred modern design kitchen with gentle reflections and bokeh highlights. Palette features emerald green, sapphire blue, and bronze glints. The dense slime moves slowly with visible weight, emphasizing smooth gravity-driven motion on the premium surface.",
+    "audio_prompt": "Studio-clean, high-fidelity audio capturing smooth, wet, slow internal movement and compression of semi-translucent slime gel. Soft, organic slime textures only; no knocking, scraping, or metallic sounds."
   }
 ]
