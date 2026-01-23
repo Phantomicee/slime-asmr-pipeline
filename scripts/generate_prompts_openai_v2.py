@@ -21,9 +21,11 @@ OUT_PATH = Path("prompts/prompts_today.json")
 HISTORY_PATH = Path("prompts/history.json")
 
 N_ITEMS = int(os.getenv("N_PROMPTS", "3"))
+MODEL = os.getenv("OPENAI_MODEL", "gpt-4.1-mini")
+TEMPERATURE = float(os.getenv("OPENAI_TEMPERATURE", "0.65"))
 
 # =========================================================
-# SURFACES — ALWAYS HORIZONTAL / SLIGHTLY SLOPED
+# VISUAL LIBRARIES
 # =========================================================
 
 SURFACES_LIB = [
@@ -35,13 +37,8 @@ SURFACES_LIB = [
     "horizontal glazed ceramic tabletop with luxury sheen",
     "horizontal dark basalt stone tabletop with matte premium texture",
     "horizontal mother-of-pearl inlay tabletop with subtle iridescence",
-    "horizontal champagne-toned brushed metal tabletop",
-    "horizontal glazed porcelain tabletop with micro crackle texture",
+    "horizontal glazed porcelain tabletop with subtle crackle texture",
 ]
-
-# =========================================================
-# BACKGROUNDS — INDOOR + OUTDOOR (REALISTIC & PREMIUM)
-# =========================================================
 
 BACKGROUNDS_LIB = [
     # Indoor
@@ -62,10 +59,6 @@ BACKGROUNDS_LIB = [
     "cliffside terrace overlooking the ocean at golden hour, softly blurred",
 ]
 
-# =========================================================
-# COLOR PALETTES
-# =========================================================
-
 PALETTES_LIB = [
     "obsidian black with subtle iridescent highlights",
     "emerald green, sapphire blue, and bronze glints",
@@ -74,67 +67,32 @@ PALETTES_LIB = [
     "ultramarine blue with rose gold and soft plum haze",
     "arctic teal with silver and midnight blue",
     "honey amber with espresso brown and warm copper",
-    "soft pastel opal tones (peach, mint, lilac) rendered realistically",
+    "soft pastel opal tones (peach, mint, lilac), realistic and premium",
 ]
-
-# =========================================================
-# SLIME TYPES — VISUAL + CONTINUOUS PRESSURE-DRIVEN AUDIO
-# =========================================================
 
 SLIME_TYPES = [
     {
         "type": "thick glossy slime",
-        "visual": (
-            "very thick cohesive slime with high viscosity and heavy mass, "
-            "slow stretching before settling, thick rounded folds, delayed recovery, "
-            "never watery, never splashy"
-        ),
-        "audio": (
-            "Continuous thick slime SFX, close-mic. Slow pressure-driven mass movement with dense, "
-            "cohesive gelatinous texture. Heavy body, muted highs, low-frequency weight. "
-            "Constant slow deformation and folding over itself under pressure. "
-            "No liquid flow, no dripping, no pouring, no splashing, no bubbles. "
-            "Studio-clean. Duration: exactly 10 seconds."
-        ),
+        "visual": "very thick cohesive slime, heavy mass, rounded folds, slow stretching, glossy surface",
     },
     {
         "type": "creamy slime",
-        "visual": (
-            "dense creamy slime with yogurt-like thickness, smooth drape, "
-            "rounded soft folds, cohesive body, calm slow deformation"
-        ),
-        "audio": (
-            "Continuous creamy slime SFX, close-mic. Smooth pressure-driven deformation with "
-            "soft dense body and gentle folding over itself. "
-            "Even uninterrupted texture, muted highs, warm mid-low frequencies. "
-            "No water-like behavior, no drips or splashes. "
-            "Studio-clean. Duration: exactly 10 seconds."
-        ),
+        "visual": "dense creamy slime, smooth rounded folds, slow deformation, soft sheen",
     },
     {
         "type": "pearlescent slime",
-        "visual": (
-            "thick pearlescent cohesive slime with subtle realistic shimmer (not glitter), "
-            "smooth glossy surface, slow rounded deformation"
-        ),
-        "audio": (
-            "Continuous premium slime SFX, close-mic. Dense gelatinous mass slowly deforming, "
-            "silky cohesive texture with constant pressure movement. "
-            "Soft, damped, low-frequency body throughout. "
-            "No liquid sounds, no dripping, no pouring, no bubbles. "
-            "Studio-clean. Duration: exactly 10 seconds."
-        ),
+        "visual": "thick pearlescent slime with subtle realistic shimmer, smooth rounded deformation",
     },
 ]
 
 SCENE_PATTERNS = [
-    "resting fully on the surface while slowly deforming and folding over itself",
-    "gradually compressing under its own weight and spreading in rounded folds",
-    "forming thick rounded folds that continuously deform under gravity",
+    "resting fully on the surface while slowly folding over itself",
+    "gradually spreading and compressing under its own weight in rounded folds",
+    "slowly deforming and merging into itself with calm, continuous motion",
 ]
 
 # =========================================================
-# HARD GLOBAL LOCKS (ANTI-FAILURE)
+# HARD RULES (VIDEO + AUDIO)
 # =========================================================
 
 BASE_RULES = """
@@ -142,26 +100,32 @@ GLOBAL VIDEO RULES (MANDATORY):
 - 10-second concept for Pika (720p).
 - Extreme macro close-up.
 - Camera completely static (no zoom, no shake).
-- Surface MUST be horizontal or gently sloped tabletop orientation (0–15° max). Never vertical, never wall.
-- Slime rests fully on the surface and moves autonomously due to gravity only.
-- Slime must be thick, cohesive, and slow-moving (never watery, never splashy).
-- No human presence of any kind: no hands, fingers, arms, people.
-- No tools, spatulas, containers, pouring devices, or interaction.
-- No new objects may enter the frame at any time.
-- No scene changes from start to end.
-- Avoid rotation, spinning, warping, jitter, or mechanical motion.
-- Background must be a REAL environment (indoor or outdoor), softly blurred (bokeh).
-- Stable cinematic lighting (no flicker).
+- Surface MUST be horizontal or gently sloped tabletop (0–15° max).
+- Slime is already present and in motion at frame 1.
+- Slime moves autonomously due to gravity only.
+- No human presence: no hands, fingers, people.
+- No tools, containers, pouring devices, or interaction.
+- No new objects may enter the frame.
+- Background must be a REAL environment (indoor or outdoor), softly blurred.
+- Stable cinematic lighting, no flicker.
 """
 
 AUDIO_RULES = """
 GLOBAL AUDIO RULES (MANDATORY):
-- Continuous pressure-driven slime sound (mass deformation), not liquid flow.
-- Thick, cohesive, gelatinous texture with low-frequency body and muted highs.
-- Explicitly forbid: water, watery, liquid, flow, pour, pouring, drip, dripping, splash, splashing, bubbles, gurgle, stream.
-- Explicitly forbid: knocking, banging, clicking, scraping, grinding, metallic or mechanical sounds.
+- Continuous ASMR slime sound, heavy and cohesive, not liquid.
+- Organic, tactile, narrative description style with onomatopoeia.
+- Avoid ALL water-like language: water, wet, liquid, flow, flowing, pour, poured, drip, dripping, splash, splashing, bubbles, gurgle, stream, honey, syrup.
+- Avoid mechanical/hard sounds: knock, bang, click, scrape, grind, metallic.
 - No voice, no music, no ambience.
 - Studio-clean, close-mic, high fidelity.
+"""
+
+AUDIO_STYLE_ANCHOR = """
+AUDIO STYLE EXAMPLE (FOLLOW THIS VIBE):
+A slow, muted plop as thick slime makes contact with the surface — dense and rounded, never splashy.
+As it continues to move, a low, sticky schlrrrp forms, like something heavy stretching and yielding.
+When it folds over itself, a soft, tacky thummm is heard, followed by a smooth glossy gluuuh as the material compresses.
+The sound is continuous, calm, rounded, and unhurried, with no sharp edges.
 """
 
 JSON_SCHEMA = """
@@ -184,17 +148,17 @@ Return VALID JSON ONLY in this exact schema:
 # =========================================================
 
 def sanitize_surface(text: str) -> str:
-    t = re.sub(r"\b(vertical|wall|panel|upright)\b", "horizontal", text, flags=re.IGNORECASE)
+    t = re.sub(r"\b(vertical|wall|upright|panel)\b", "horizontal", text, flags=re.IGNORECASE)
     if "horizontal" not in t.lower():
         t = "horizontal " + t
     if "tabletop" not in t.lower():
-        t += " tabletop orientation"
+        t += " tabletop"
     return t
 
-def load_history(max_items: int = 12) -> List[dict[str, Any]]:
+def load_history(limit: int = 12) -> List[dict[str, Any]]:
     if HISTORY_PATH.exists():
         try:
-            return json.loads(HISTORY_PATH.read_text(encoding="utf-8"))[-max_items:]
+            return json.loads(HISTORY_PATH.read_text(encoding="utf-8"))[-limit:]
         except Exception:
             return []
     return []
@@ -206,7 +170,7 @@ def save_history(entries: List[dict[str, Any]]) -> None:
     HISTORY_PATH.write_text(json.dumps(hist, ensure_ascii=False, indent=2), encoding="utf-8")
 
 # =========================================================
-# BUILD UNIQUE BRIEFS (NO DUPLICATES PER RUN)
+# BUILD UNIQUE BRIEFS
 # =========================================================
 
 @dataclass
@@ -218,21 +182,15 @@ class Brief:
     scene: str
 
 def build_briefs(n: int) -> List[Brief]:
-    surfaces = random.sample(SURFACES_LIB, n)
-    backgrounds = random.sample(BACKGROUNDS_LIB, n)
-    palettes = random.sample(PALETTES_LIB, n)
-    slimes = random.sample(SLIME_TYPES, n)
-    scenes = random.sample(SCENE_PATTERNS, n)
-
     return [
         Brief(
-            surface=surfaces[i],
-            background=backgrounds[i],
-            palette=palettes[i],
-            slime=slimes[i],
-            scene=scenes[i],
+            surface=random.choice(SURFACES_LIB),
+            background=random.choice(BACKGROUNDS_LIB),
+            palette=random.choice(PALETTES_LIB),
+            slime=random.choice(SLIME_TYPES),
+            scene=random.choice(SCENE_PATTERNS),
         )
-        for i in range(n)
+        for _ in range(n)
     ]
 
 # =========================================================
@@ -245,9 +203,6 @@ def main() -> None:
         raise SystemExit("Missing OPENAI_API_KEY")
 
     client = OpenAI(api_key=api_key)
-    model = os.getenv("OPENAI_MODEL", "gpt-4.1-mini")
-    temperature = float(os.getenv("OPENAI_TEMPERATURE", "0.55"))
-
     briefs = build_briefs(N_ITEMS)
     history = load_history()
     run_id = sha256(datetime.now().isoformat().encode()).hexdigest()[:8]
@@ -258,20 +213,21 @@ You generate premium macro ASMR video and audio prompts.
 {BASE_RULES}
 {AUDIO_RULES}
 
-CRITICAL:
-- Never introduce hands, people, tools, or interaction.
-- Never introduce late changes or new objects.
-- Always keep the surface horizontal tabletop orientation.
+IMPORTANT:
+- Follow the AUDIO STYLE EXAMPLE for tone and texture.
+- Audio must feel thick, cohesive, slow, and satisfying — never watery.
 
-RECENT GENERATIONS TO AVOID REPEATING:
+RECENT PROMPTS (AVOID SIMILARITY):
 {json.dumps(history, ensure_ascii=False, indent=2)}
+
+{AUDIO_STYLE_ANCHOR}
 
 {JSON_SCHEMA}
 """
 
     user_prompt = f"""
-Generate exactly {N_ITEMS} items using the briefs below.
-Follow them strictly and keep all motion autonomous.
+Generate exactly {N_ITEMS} matched items using the briefs below.
+Use each brief once. Do not repeat environments within this batch.
 
 {json.dumps([b.__dict__ for b in briefs], ensure_ascii=False, indent=2)}
 
@@ -279,12 +235,12 @@ Return JSON only.
 """
 
     resp = client.responses.create(
-        model=model,
+        model=MODEL,
         input=[
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": user_prompt},
         ],
-        temperature=temperature,
+        temperature=TEMPERATURE,
     )
 
     data = json.loads(resp.output_text.strip())
