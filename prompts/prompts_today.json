@@ -1,32 +1,29 @@
 [
   {
     "id": 1,
-    "mode": "library",
-    "surface": "horizontal smoked glass tabletop with deep glossy reflections",
-    "background": "library corner with warm lamp glow, softly blurred",
-    "palette": "arctic teal + silver + midnight blue",
-    "slime_type": "creamy slime",
-    "video_prompt": "Extreme macro close-up of dense creamy slime on a horizontal smoked glass tabletop with deep glossy reflections. The background shows a softly blurred library corner with warm lamp glow. The slime, colored in arctic teal, silver, and midnight blue, slowly pours forming elegant ribbons that transition into a smooth glide with rounded soft folds and gentle deformation. The camera is static, capturing the calm slow glide and cohesive body of the slime with premium realistic reflections and stable cinematic lighting.",
-    "audio_prompt": "Slow and gentle creamy slime texture with moderate event spacing. Sounds of smooth folding, soft wet movement, and gradual settling are heard, maintaining a calm, never busy tempo."
+    "surface": "horizontal brushed metal tabletop with soft linear reflections",
+    "background": "calm spa interior with warm sconces and subtle steam, softly blurred",
+    "palette": "jade green with pearl white and champagne gold",
+    "slime_type": "pearlescent slime",
+    "video_prompt": "Extreme macro close-up of thick pearlescent cohesive slime with subtle realistic shimmer resting fully on a horizontal brushed metal tabletop with soft linear reflections. The slime forms thick rounded folds that slowly deform and glide across the surface autonomously due to gravity only, with a smooth glossy surface and slow rounded deformation. Background is a softly blurred calm spa interior with warm sconces and subtle steam. The camera is completely static with stable cinematic lighting and 720p resolution.",
+    "audio_prompt": "Studio-clean, high fidelity slow elegant slime audio with soft wet texture and gentle motion. Low-to-moderate tempo matching the thick pearlescent slime's slow rounded deformation. No harsh peaks or forbidden sounds. Duration: exactly 10 seconds."
   },
   {
     "id": 2,
-    "mode": "invent",
-    "surface": "horizontal satin-finished onyx stone tabletop with subtle natural veins and a soft matte sheen",
-    "background": "luxury penthouse lounge interior with dim nighttime city lights visible through large windows, softly blurred",
-    "palette": "obsidian black + subtle iridescent highlights + deep color depth",
+    "surface": "horizontal brushed metal tabletop with soft linear reflections",
+    "background": "luxury penthouse lounge interior with dim nighttime city lights through large windows, softly blurred",
+    "palette": "emerald green, sapphire blue, and bronze glints",
     "slime_type": "pearlescent slime",
-    "video_prompt": "Extreme macro close-up of thick pearlescent slime on a horizontal satin-finished onyx stone tabletop with subtle natural veins and a soft matte sheen. The softly blurred background shows a luxury penthouse lounge interior with dim nighttime city lights through large windows. The slime, in obsidian black with subtle iridescent highlights, slowly settles onto the surface, spreading gradually then gliding with visible weight and rounded edges. The camera remains completely static, capturing smooth glossy surface and slow rounded deformation under premium cinematic lighting.",
-    "audio_prompt": "Slow elegant slime texture with soft wet detail. The audio features low-to-moderate tempo sounds of smooth continuous movement with no harsh peaks."
+    "video_prompt": "Extreme macro close-up of thick pearlescent cohesive slime with subtle realistic shimmer resting fully on a horizontal brushed metal tabletop with soft linear reflections. The slime forms thick rounded folds that slowly deform and glide across the surface autonomously due to gravity only, with a smooth glossy surface and slow rounded deformation. Background is a softly blurred luxury penthouse lounge interior with dim nighttime city lights through large windows. The camera is completely static with stable cinematic lighting and 720p resolution.",
+    "audio_prompt": "Studio-clean, high fidelity slow elegant slime audio with soft wet texture and gentle motion. Low-to-moderate tempo matching the thick pearlescent slime's slow rounded deformation. No harsh peaks or forbidden sounds. Duration: exactly 10 seconds."
   },
   {
     "id": 3,
-    "mode": "invent",
-    "surface": "horizontal polished terrazzo tabletop with fine rose gold and ultramarine blue inlays, high luxury sheen",
-    "background": "minimalist interior studio with mixed warm and cool practical lights, softly blurred",
-    "palette": "ultramarine blue + rose gold + soft plum haze",
+    "surface": "horizontal brushed metal tabletop with soft linear reflections",
+    "background": "calm spa interior with warm sconces and subtle steam, softly blurred",
+    "palette": "deep sapphire blue with warm amber gold and subtle violet",
     "slime_type": "thick glossy slime",
-    "video_prompt": "Extreme macro close-up of very thick cohesive slime on a horizontal polished terrazzo tabletop featuring fine rose gold and ultramarine blue inlays with a high luxury sheen. The softly blurred background is a minimalist interior studio with mixed warm and cool practical lights. The slime, colored in ultramarine blue, rose gold, and soft plum haze, slowly falls as a thick ribbon from above, stretching before settling, gently compressing, and then gliding in thick rounded folds with delayed recovery. The camera is completely static, emphasizing the heavy mass and slow viscosity with premium realistic reflections and stable cinematic lighting.",
-    "audio_prompt": "Very slow-paced, heavy, cohesive slime texture with low event density. The sounds include long pauses, smooth wet glide, soft folds, and gradual settling without sharp transients."
+    "video_prompt": "Extreme macro close-up of very thick cohesive slime with high viscosity and heavy mass resting fully on a horizontal brushed metal tabletop with soft linear reflections. The slime slowly settles onto the surface, gently spreading, then gliding in thick rounded folds with slow stretching before settling and delayed recovery. The surface is horizontal and the slime moves autonomously due to gravity only, never watery or splashy. Background is a softly blurred calm spa interior with warm sconces and subtle steam. The camera is completely static with stable cinematic lighting and 720p resolution.",
+    "audio_prompt": "Studio-clean, high fidelity very slow-paced slime audio. Deep, heavy, cohesive gel movement with long pauses, low event density, smooth wet glide, soft folds, and long decay. No sharp transients or forbidden sounds. Duration: exactly 10 seconds."
   }
 ]
