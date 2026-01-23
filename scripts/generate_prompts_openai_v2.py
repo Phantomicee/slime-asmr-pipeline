@@ -13,14 +13,17 @@ from typing import Any, List
 
 from openai import OpenAI
 
+# =========================================================
+# PATHS & SETTINGS
+# =========================================================
+
 OUT_PATH = Path("prompts/prompts_today.json")
 HISTORY_PATH = Path("prompts/history.json")
 
 N_ITEMS = int(os.getenv("N_PROMPTS", "3"))
-INVENT_RATIO = float(os.getenv("INVENT_RATIO", "0.25"))  # 25% invented per run
 
 # =========================================================
-# SURFACES (ALWAYS HORIZONTAL / TABLETOP)
+# SURFACES — ALWAYS HORIZONTAL / SLIGHTLY SLOPED
 # =========================================================
 
 SURFACES_LIB = [
@@ -37,11 +40,11 @@ SURFACES_LIB = [
 ]
 
 # =========================================================
-# BACKGROUNDS — INDOOR + OUTDOOR (REALISTIC, PREMIUM)
+# BACKGROUNDS — INDOOR + OUTDOOR (REALISTIC & PREMIUM)
 # =========================================================
 
 BACKGROUNDS_LIB = [
-    # -------- INDOOR --------
+    # Indoor
     "luxury penthouse lounge with panoramic city skyline at dusk, softly blurred",
     "high-end spa interior with warm stone walls and subtle steam, softly blurred",
     "modern design kitchen with reflective surfaces and warm ambient lighting, softly blurred",
@@ -50,17 +53,17 @@ BACKGROUNDS_LIB = [
     "upscale cocktail bar with neon accents and glass reflections, softly blurred",
     "modern art gallery interior with soft spotlights and clean walls, softly blurred",
 
-    # -------- OUTDOOR (SAFE & REALISTIC) --------
-    "sunset cliffside terrace overlooking the ocean, warm golden-hour light, softly blurred",
+    # Outdoor
+    "luxury rooftop terrace overlooking city lights at dusk, softly blurred",
     "quiet mountain viewpoint with distant peaks under soft evening light, softly blurred",
-    "luxury rooftop terrace with city skyline and warm ambient lighting, softly blurred",
     "desert stone plateau during calm sunset with warm sky tones, softly blurred",
-    "forest clearing with soft morning light filtering through trees, softly blurred",
     "rocky coastal overlook with gentle sea haze and warm dusk light, softly blurred",
+    "forest clearing with soft morning light filtering through trees, softly blurred",
+    "cliffside terrace overlooking the ocean at golden hour, softly blurred",
 ]
 
 # =========================================================
-# COLOR PALETTES (RICH & VARIED)
+# COLOR PALETTES
 # =========================================================
 
 PALETTES_LIB = [
@@ -71,11 +74,11 @@ PALETTES_LIB = [
     "ultramarine blue with rose gold and soft plum haze",
     "arctic teal with silver and midnight blue",
     "honey amber with espresso brown and warm copper",
-    "soft pastel opal tones (peach, mint, lilac) but still realistic and premium",
+    "soft pastel opal tones (peach, mint, lilac) rendered realistically",
 ]
 
 # =========================================================
-# SLIME TYPES (VISUAL + AUDIO TEMPO LOCK)
+# SLIME TYPES — VISUAL + CONTINUOUS PRESSURE-DRIVEN AUDIO
 # =========================================================
 
 SLIME_TYPES = [
@@ -87,9 +90,10 @@ SLIME_TYPES = [
             "never watery, never splashy"
         ),
         "audio": (
-            "Very slow, heavy, cohesive slime texture. Dense gelatinous folds and thick glide sounds. "
-            "Not liquid, not watery, no drips, no pouring, no splashes. "
-            "Low event density, long pauses, smooth long decay. "
+            "Continuous thick slime SFX, close-mic. Slow pressure-driven mass movement with dense, "
+            "cohesive gelatinous texture. Heavy body, muted highs, low-frequency weight. "
+            "Constant slow deformation and folding over itself under pressure. "
+            "No liquid flow, no dripping, no pouring, no splashing, no bubbles. "
             "Studio-clean. Duration: exactly 10 seconds."
         ),
     },
@@ -97,12 +101,13 @@ SLIME_TYPES = [
         "type": "creamy slime",
         "visual": (
             "dense creamy slime with yogurt-like thickness, smooth drape, "
-            "rounded soft folds, cohesive body, calm slow glide"
+            "rounded soft folds, cohesive body, calm slow deformation"
         ),
         "audio": (
-            "Slow, dense creamy slime texture. Thick cohesive movement with soft folds and gradual settling. "
-            "Not watery, not runny, no drips, no pouring, no splashes. "
-            "Moderate spacing, gentle attack, smooth decay. "
+            "Continuous creamy slime SFX, close-mic. Smooth pressure-driven deformation with "
+            "soft dense body and gentle folding over itself. "
+            "Even uninterrupted texture, muted highs, warm mid-low frequencies. "
+            "No water-like behavior, no drips or splashes. "
             "Studio-clean. Duration: exactly 10 seconds."
         ),
     },
@@ -113,18 +118,19 @@ SLIME_TYPES = [
             "smooth glossy surface, slow rounded deformation"
         ),
         "audio": (
-            "Slow, heavy slime texture with smooth cohesive glide and soft folds. "
-            "No liquid sounds, no dripping, no splashing, no bubbles. "
-            "Low-to-moderate tempo, no sharp peaks. "
+            "Continuous premium slime SFX, close-mic. Dense gelatinous mass slowly deforming, "
+            "silky cohesive texture with constant pressure movement. "
+            "Soft, damped, low-frequency body throughout. "
+            "No liquid sounds, no dripping, no pouring, no bubbles. "
             "Studio-clean. Duration: exactly 10 seconds."
         ),
     },
 ]
 
 SCENE_PATTERNS = [
-    "resting fully on the surface, slowly settling, then gliding in rounded folds",
-    "gradually compressing under its own weight and flowing slowly across the surface",
-    "forming thick rounded folds that deform and glide with visible weight",
+    "resting fully on the surface while slowly deforming and folding over itself",
+    "gradually compressing under its own weight and spreading in rounded folds",
+    "forming thick rounded folds that continuously deform under gravity",
 ]
 
 # =========================================================
@@ -150,12 +156,12 @@ GLOBAL VIDEO RULES (MANDATORY):
 
 AUDIO_RULES = """
 GLOBAL AUDIO RULES (MANDATORY):
-- Slime-only texture: thick, cohesive, gelatinous.
-- Explicitly forbid: water, watery, liquid, pour, pouring, drip, dripping, stream, splash, splashing, bubbles, gurgle, slosh.
-- Explicitly forbid: knocking, banging, thumping, sawing, grinding, scraping, metallic sounds, clicks, switches, tools.
-- Tempo must be slow with low event density.
+- Continuous pressure-driven slime sound (mass deformation), not liquid flow.
+- Thick, cohesive, gelatinous texture with low-frequency body and muted highs.
+- Explicitly forbid: water, watery, liquid, flow, pour, pouring, drip, dripping, splash, splashing, bubbles, gurgle, stream.
+- Explicitly forbid: knocking, banging, clicking, scraping, grinding, metallic or mechanical sounds.
 - No voice, no music, no ambience.
-- Studio-clean, high fidelity.
+- Studio-clean, close-mic, high fidelity.
 """
 
 JSON_SCHEMA = """
@@ -185,7 +191,7 @@ def sanitize_surface(text: str) -> str:
         t += " tabletop orientation"
     return t
 
-def load_history(max_items: int = 10) -> List[dict[str, Any]]:
+def load_history(max_items: int = 12) -> List[dict[str, Any]]:
     if HISTORY_PATH.exists():
         try:
             return json.loads(HISTORY_PATH.read_text(encoding="utf-8"))[-max_items:]
@@ -218,18 +224,16 @@ def build_briefs(n: int) -> List[Brief]:
     slimes = random.sample(SLIME_TYPES, n)
     scenes = random.sample(SCENE_PATTERNS, n)
 
-    briefs = []
-    for i in range(n):
-        briefs.append(
-            Brief(
-                surface=surfaces[i],
-                background=backgrounds[i],
-                palette=palettes[i],
-                slime=slimes[i],
-                scene=scenes[i],
-            )
+    return [
+        Brief(
+            surface=surfaces[i],
+            background=backgrounds[i],
+            palette=palettes[i],
+            slime=slimes[i],
+            scene=scenes[i],
         )
-    return briefs
+        for i in range(n)
+    ]
 
 # =========================================================
 # MAIN
