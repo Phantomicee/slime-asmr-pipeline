@@ -1,29 +1,32 @@
 [
   {
     "id": 1,
-    "surface": "handcrafted satin ceramic glaze",
-    "background": "calm stone room with warm ambient lighting, softly blurred",
-    "palette": "honey amber with espresso brown and warm copper",
+    "mode": "library",
+    "surface": "horizontal smoked glass tabletop with deep glossy reflections",
+    "background": "library corner with warm lamp glow, softly blurred",
+    "palette": "arctic teal + silver + midnight blue",
     "slime_type": "creamy slime",
-    "video_prompt": "Extreme macro close-up of dense creamy slime with yogurt-like thickness slowly draping and folding in rounded soft folds over handcrafted satin ceramic glaze. Background is a softly blurred calm stone room with warm ambient lighting. Palette features honey amber, espresso brown, and warm copper tones. The cohesive slime flows and folds over itself in calm, hypnotic motion, emphasizing slow, gravity-driven movement on the premium surface.",
-    "audio_prompt": "Studio-clean, high-fidelity audio capturing smooth, wet, dense creamy slime movement with slow folds and cohesive glide. Soft, organic slime textures only; no knocking, banging, or metallic sounds."
+    "video_prompt": "Extreme macro close-up of dense creamy slime on a horizontal smoked glass tabletop with deep glossy reflections. The background shows a softly blurred library corner with warm lamp glow. The slime, colored in arctic teal, silver, and midnight blue, slowly pours forming elegant ribbons that transition into a smooth glide with rounded soft folds and gentle deformation. The camera is static, capturing the calm slow glide and cohesive body of the slime with premium realistic reflections and stable cinematic lighting.",
+    "audio_prompt": "Slow and gentle creamy slime texture with moderate event spacing. Sounds of smooth folding, soft wet movement, and gradual settling are heard, maintaining a calm, never busy tempo."
   },
   {
     "id": 2,
-    "surface": "smoked glass slab with inner light depth",
-    "background": "greenhouse corner with soft sunlight and plants, very blurred",
-    "palette": "arctic teal with silver and midnight blue",
-    "slime_type": "thick glossy slime",
-    "video_prompt": "Extreme macro close-up of very cohesive, high-viscosity thick glossy slime stretching, falling, and spreading in thick ribbons and rounded folds over smoked glass slab with inner light depth. Background shows softly blurred greenhouse corner with soft sunlight and plants. Palette includes arctic teal, silver, and midnight blue. Slow deformation and delayed recovery highlight gravity-driven, slow, heavy, and satisfying slime motion on the premium surface.",
-    "audio_prompt": "Studio-clean, high-fidelity audio of thick glossy slime producing smooth, wet, slow, dense texture sounds with gentle stretching and spreading. Pure slime sounds only; no metallic or harsh noises."
+    "mode": "invent",
+    "surface": "horizontal satin-finished onyx stone tabletop with subtle natural veins and a soft matte sheen",
+    "background": "luxury penthouse lounge interior with dim nighttime city lights visible through large windows, softly blurred",
+    "palette": "obsidian black + subtle iridescent highlights + deep color depth",
+    "slime_type": "pearlescent slime",
+    "video_prompt": "Extreme macro close-up of thick pearlescent slime on a horizontal satin-finished onyx stone tabletop with subtle natural veins and a soft matte sheen. The softly blurred background shows a luxury penthouse lounge interior with dim nighttime city lights through large windows. The slime, in obsidian black with subtle iridescent highlights, slowly settles onto the surface, spreading gradually then gliding with visible weight and rounded edges. The camera remains completely static, capturing smooth glossy surface and slow rounded deformation under premium cinematic lighting.",
+    "audio_prompt": "Slow elegant slime texture with soft wet detail. The audio features low-to-moderate tempo sounds of smooth continuous movement with no harsh peaks."
   },
   {
     "id": 3,
-    "surface": "brushed metal plate with soft reflections",
-    "background": "modern design kitchen with gentle reflections and bokeh highlights, softly blurred",
-    "palette": "emerald green with sapphire blue and bronze glints",
-    "slime_type": "semi-translucent slime gel",
-    "video_prompt": "Extreme macro close-up of semi-translucent, thick cohesive slime gel with visible depth slowly settling, stretching, and compressing as one mass across a brushed metal plate with soft reflections. Background is a softly blurred modern design kitchen with gentle reflections and bokeh highlights. Palette features emerald green, sapphire blue, and bronze glints. The dense slime moves slowly with visible weight, emphasizing smooth gravity-driven motion on the premium surface.",
-    "audio_prompt": "Studio-clean, high-fidelity audio capturing smooth, wet, slow internal movement and compression of semi-translucent slime gel. Soft, organic slime textures only; no knocking, scraping, or metallic sounds."
+    "mode": "invent",
+    "surface": "horizontal polished terrazzo tabletop with fine rose gold and ultramarine blue inlays, high luxury sheen",
+    "background": "minimalist interior studio with mixed warm and cool practical lights, softly blurred",
+    "palette": "ultramarine blue + rose gold + soft plum haze",
+    "slime_type": "thick glossy slime",
+    "video_prompt": "Extreme macro close-up of very thick cohesive slime on a horizontal polished terrazzo tabletop featuring fine rose gold and ultramarine blue inlays with a high luxury sheen. The softly blurred background is a minimalist interior studio with mixed warm and cool practical lights. The slime, colored in ultramarine blue, rose gold, and soft plum haze, slowly falls as a thick ribbon from above, stretching before settling, gently compressing, and then gliding in thick rounded folds with delayed recovery. The camera is completely static, emphasizing the heavy mass and slow viscosity with premium realistic reflections and stable cinematic lighting.",
+    "audio_prompt": "Very slow-paced, heavy, cohesive slime texture with low event density. The sounds include long pauses, smooth wet glide, soft folds, and gradual settling without sharp transients."
   }
 ]
