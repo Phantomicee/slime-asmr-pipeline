@@ -25,70 +25,87 @@ MODEL = os.getenv("OPENAI_MODEL", "gpt-4.1-mini")
 TEMPERATURE = float(os.getenv("OPENAI_TEMPERATURE", "0.65"))
 
 # =========================================================
-# VISUAL LIBRARIES
+# SURFACES (ALWAYS HORIZONTAL / PREMIUM)
 # =========================================================
 
 SURFACES_LIB = [
     "horizontal polished black marble tabletop with fine white veining",
-    "horizontal honed travertine stone tabletop with soft porous texture",
-    "horizontal satin-finished onyx stone tabletop with subtle natural veins",
-    "horizontal brushed metal tabletop with soft linear reflections",
+    "horizontal satin-finished onyx stone tabletop with translucent layers",
+    "horizontal brushed metal tabletop with soft cinematic reflections",
     "horizontal smoked glass tabletop with deep glossy reflections",
-    "horizontal glazed ceramic tabletop with luxury sheen",
     "horizontal dark basalt stone tabletop with matte premium texture",
     "horizontal mother-of-pearl inlay tabletop with subtle iridescence",
-    "horizontal glazed porcelain tabletop with subtle crackle texture",
+    "horizontal glazed ceramic tabletop with luxury sheen",
 ]
+
+# =========================================================
+# BACKGROUNDS — INDOOR + OUTDOOR (VISUALLY INTERESTING)
+# =========================================================
 
 BACKGROUNDS_LIB = [
-    # Indoor
-    "luxury penthouse lounge with panoramic city skyline at dusk, softly blurred",
-    "high-end spa interior with warm stone walls and subtle steam, softly blurred",
-    "modern design kitchen with reflective surfaces and warm ambient lighting, softly blurred",
-    "minimalist product studio with subtle colored practical lights, softly blurred",
-    "boutique hotel bathroom with marble textures and warm lamp glow, softly blurred",
-    "upscale cocktail bar with neon accents and glass reflections, softly blurred",
-    "modern art gallery interior with soft spotlights and clean walls, softly blurred",
+    # Indoor (cinematic)
+    "luxury penthouse lounge with glowing city skyline at night, softly blurred",
+    "high-end spa interior with warm stone walls and atmospheric steam, softly blurred",
+    "modern art gallery with dramatic spotlights and deep shadows, softly blurred",
+    "upscale cocktail bar with neon accent lights and glass reflections, softly blurred",
+    "minimalist studio with colored practical lights and moody ambience, softly blurred",
 
-    # Outdoor
-    "luxury rooftop terrace overlooking city lights at dusk, softly blurred",
-    "quiet mountain viewpoint with distant peaks under soft evening light, softly blurred",
-    "desert stone plateau during calm sunset with warm sky tones, softly blurred",
-    "rocky coastal overlook with gentle sea haze and warm dusk light, softly blurred",
-    "forest clearing with soft morning light filtering through trees, softly blurred",
+    # Outdoor (safe, calm, cinematic)
+    "rooftop terrace overlooking a glowing city at dusk, softly blurred",
+    "desert stone plateau during golden sunset with warm sky gradients, softly blurred",
     "cliffside terrace overlooking the ocean at golden hour, softly blurred",
+    "forest clearing with shafts of warm light filtering through trees, softly blurred",
+    "rocky coastal overlook with sea haze and dramatic evening light, softly blurred",
 ]
+
+# =========================================================
+# COLOR PALETTES — ALWAYS COLORFUL & HOOKY
+# =========================================================
 
 PALETTES_LIB = [
-    "obsidian black with subtle iridescent highlights",
-    "emerald green, sapphire blue, and bronze glints",
-    "deep sapphire blue with warm amber gold and subtle violet",
-    "jade green with pearl white and champagne gold",
-    "ultramarine blue with rose gold and soft plum haze",
-    "arctic teal with silver and midnight blue",
-    "honey amber with espresso brown and warm copper",
-    "soft pastel opal tones (peach, mint, lilac), realistic and premium",
+    "deep emerald green blending into sapphire blue with glowing gold highlights",
+    "neon magenta flowing into electric cyan with subtle violet glow",
+    "lava orange and molten amber with deep crimson shadows and inner glow",
+    "ultramarine blue fading into teal with silver light veins",
+    "jade green, turquoise, and pearl highlights with soft internal illumination",
+    "royal purple melting into hot pink with luminous accents",
+    "midnight blue with bioluminescent cyan streaks and soft glow",
+    "sunset gradient slime: coral, peach, and warm gold with glowing edges",
 ]
+
+# =========================================================
+# SLIME TYPES — VISUAL MAGIE VOOR AI
+# =========================================================
 
 SLIME_TYPES = [
     {
         "type": "thick glossy slime",
-        "visual": "very thick cohesive slime, heavy mass, rounded folds, slow stretching, glossy surface",
+        "visual": (
+            "very thick cohesive slime with rich saturated colors, smooth gradients, "
+            "subtle internal glow and light traveling through the material, "
+            "heavy rounded folds, glossy surface with luminous highlights"
+        ),
     },
     {
         "type": "creamy slime",
-        "visual": "dense creamy slime, smooth rounded folds, slow deformation, soft sheen",
+        "visual": (
+            "dense creamy slime with vibrant blended colors, "
+            "soft internal illumination, silky rounded folds, slow deformation"
+        ),
     },
     {
         "type": "pearlescent slime",
-        "visual": "thick pearlescent slime with subtle realistic shimmer, smooth rounded deformation",
+        "visual": (
+            "thick pearlescent slime with colorful iridescence (never white), "
+            "rainbow-like light shifts, subtle internal glow, rich saturated tones"
+        ),
     },
 ]
 
 SCENE_PATTERNS = [
-    "resting fully on the surface while slowly folding over itself",
+    "resting fully on the surface while slowly folding and merging into itself",
     "gradually spreading and compressing under its own weight in rounded folds",
-    "slowly deforming and merging into itself with calm, continuous motion",
+    "slowly deforming with continuous motion and visible internal depth",
 ]
 
 # =========================================================
@@ -103,6 +120,8 @@ GLOBAL VIDEO RULES (MANDATORY):
 - Surface MUST be horizontal or gently sloped tabletop (0–15° max).
 - Slime is already present and in motion at frame 1.
 - Slime moves autonomously due to gravity only.
+- Slime must be visually striking and colorful, never neutral or plain.
+- Use rich saturated colors, gradients, internal illumination, and visible depth.
 - No human presence: no hands, fingers, people.
 - No tools, containers, pouring devices, or interaction.
 - No new objects may enter the frame.
@@ -112,9 +131,10 @@ GLOBAL VIDEO RULES (MANDATORY):
 
 AUDIO_RULES = """
 GLOBAL AUDIO RULES (MANDATORY):
-- Continuous ASMR slime sound, heavy and cohesive, not liquid.
-- Organic, tactile, narrative description style with onomatopoeia.
-- Avoid ALL water-like language: water, wet, liquid, flow, flowing, pour, poured, drip, dripping, splash, splashing, bubbles, gurgle, stream, honey, syrup.
+- Continuous ASMR slime sound: heavy, cohesive, organic, and calming.
+- Narrative, tactile description style with onomatopoeia.
+- Avoid ALL water-like language: water, wet, liquid, flow, flowing, pour, poured,
+  drip, dripping, splash, splashing, bubbles, gurgle, stream, honey, syrup.
 - Avoid mechanical/hard sounds: knock, bang, click, scrape, grind, metallic.
 - No voice, no music, no ambience.
 - Studio-clean, close-mic, high fidelity.
@@ -122,10 +142,10 @@ GLOBAL AUDIO RULES (MANDATORY):
 
 AUDIO_STYLE_ANCHOR = """
 AUDIO STYLE EXAMPLE (FOLLOW THIS VIBE):
-A slow, muted plop as thick slime makes contact with the surface — dense and rounded, never splashy.
-As it continues to move, a low, sticky schlrrrp forms, like something heavy stretching and yielding.
-When it folds over itself, a soft, tacky thummm is heard, followed by a smooth glossy gluuuh as the material compresses.
-The sound is continuous, calm, rounded, and unhurried, with no sharp edges.
+A slow, muted plop as thick slime makes contact with the surface — dense and rounded.
+As it moves, a low, sticky schlrrrp forms, like something heavy stretching and yielding.
+When it folds over itself, a soft, tacky thummm is heard, followed by a smooth glossy gluuuh
+as the material compresses. The sound is continuous, calm, rounded, and unhurried.
 """
 
 JSON_SCHEMA = """
@@ -182,15 +202,21 @@ class Brief:
     scene: str
 
 def build_briefs(n: int) -> List[Brief]:
+    surfaces = random.sample(SURFACES_LIB, n)
+    backgrounds = random.sample(BACKGROUNDS_LIB, n)
+    palettes = random.sample(PALETTES_LIB, n)
+    slimes = random.sample(SLIME_TYPES, n)
+    scenes = random.sample(SCENE_PATTERNS, n)
+
     return [
         Brief(
-            surface=random.choice(SURFACES_LIB),
-            background=random.choice(BACKGROUNDS_LIB),
-            palette=random.choice(PALETTES_LIB),
-            slime=random.choice(SLIME_TYPES),
-            scene=random.choice(SCENE_PATTERNS),
+            surface=surfaces[i],
+            background=backgrounds[i],
+            palette=palettes[i],
+            slime=slimes[i],
+            scene=scenes[i],
         )
-        for _ in range(n)
+        for i in range(n)
     ]
 
 # =========================================================
@@ -213,9 +239,13 @@ You generate premium macro ASMR video and audio prompts.
 {BASE_RULES}
 {AUDIO_RULES}
 
-IMPORTANT:
-- Follow the AUDIO STYLE EXAMPLE for tone and texture.
-- Audio must feel thick, cohesive, slow, and satisfying — never watery.
+IMPORTANT VISUAL PRIORITY:
+- Slime must always be colorful, luminous, and visually striking.
+- If background is dark or neutral, slime must be vibrant and glowing.
+- Never generate plain white, gray, or colorless slime.
+
+IMPORTANT AUDIO PRIORITY:
+- Follow the AUDIO STYLE EXAMPLE closely.
 
 RECENT PROMPTS (AVOID SIMILARITY):
 {json.dumps(history, ensure_ascii=False, indent=2)}
