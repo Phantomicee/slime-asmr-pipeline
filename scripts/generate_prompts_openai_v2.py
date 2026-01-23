@@ -36,26 +36,34 @@ SURFACES_LIB = [
     "horizontal dark basalt stone tabletop with matte premium texture",
     "horizontal mother-of-pearl inlay tabletop with subtle iridescence",
     "horizontal glazed ceramic tabletop with luxury sheen",
+    "horizontal glazed porcelain tabletop with subtle crackle texture",
 ]
 
 # =========================================================
-# BACKGROUNDS — INDOOR + OUTDOOR (VISUALLY INTERESTING)
+# BACKGROUNDS — INDOOR + OUTDOOR (WITH MOUNTAIN VARIANTS)
 # =========================================================
 
 BACKGROUNDS_LIB = [
-    # Indoor (cinematic)
-    "luxury penthouse lounge with glowing city skyline at night, softly blurred",
-    "high-end spa interior with warm stone walls and atmospheric steam, softly blurred",
+    # ===== INDOOR =====
+    "luxury penthouse lounge at night with glowing city lights and deep contrast, softly blurred",
+    "high-end spa interior with warm stone walls and drifting steam, softly blurred",
     "modern art gallery with dramatic spotlights and deep shadows, softly blurred",
-    "upscale cocktail bar with neon accent lights and glass reflections, softly blurred",
+    "upscale cocktail bar with neon accents and glass reflections, softly blurred",
     "minimalist studio with colored practical lights and moody ambience, softly blurred",
+    "boutique hotel suite with warm lamp glow and textured fabrics, softly blurred",
 
-    # Outdoor (safe, calm, cinematic)
-    "rooftop terrace overlooking a glowing city at dusk, softly blurred",
-    "desert stone plateau during golden sunset with warm sky gradients, softly blurred",
+    # ===== OUTDOOR – MOUNTAIN VARIANTS =====
+    "snowy mountain plateau at blue hour with cold sky gradients and distant peaks, softly blurred",
+    "rocky mountain overlook at warm sunset with orange-pink sky glow, softly blurred",
+    "misty mountain ridge at early dawn with soft fog and muted colors, softly blurred",
+    "high-altitude mountain terrace at night under a star-filled sky, softly blurred",
+
+    # ===== OUTDOOR – COAST / DESERT / FOREST =====
     "cliffside terrace overlooking the ocean at golden hour, softly blurred",
-    "forest clearing with shafts of warm light filtering through trees, softly blurred",
-    "rocky coastal overlook with sea haze and dramatic evening light, softly blurred",
+    "rocky coastal overlook during moody overcast dusk, softly blurred",
+    "desert stone plateau during fiery sunset with dramatic sky gradients, softly blurred",
+    "quiet forest clearing at sunrise with warm light shafts, softly blurred",
+    "forest overlook during autumn twilight with deep amber tones, softly blurred",
 ]
 
 # =========================================================
@@ -64,33 +72,33 @@ BACKGROUNDS_LIB = [
 
 PALETTES_LIB = [
     "deep emerald green blending into sapphire blue with glowing gold highlights",
-    "neon magenta flowing into electric cyan with subtle violet glow",
+    "neon magenta blending into electric cyan with subtle violet glow",
     "lava orange and molten amber with deep crimson shadows and inner glow",
     "ultramarine blue fading into teal with silver light veins",
     "jade green, turquoise, and pearl highlights with soft internal illumination",
     "royal purple melting into hot pink with luminous accents",
     "midnight blue with bioluminescent cyan streaks and soft glow",
     "sunset gradient slime: coral, peach, and warm gold with glowing edges",
+    "electric blue with neon lime accents and faint internal glow",
 ]
 
 # =========================================================
-# SLIME TYPES — VISUAL MAGIE VOOR AI
+# SLIME TYPES — VISUAL MAGIE + CONTINUOUS ARRIVAL FROM ABOVE
 # =========================================================
 
 SLIME_TYPES = [
     {
         "type": "thick glossy slime",
         "visual": (
-            "very thick cohesive slime with rich saturated colors, smooth gradients, "
-            "subtle internal glow and light traveling through the material, "
-            "heavy rounded folds, glossy surface with luminous highlights"
+            "very thick cohesive slime with rich saturated colors and smooth gradients, "
+            "subtle internal illumination, heavy rounded folds, glossy surface with luminous highlights"
         ),
     },
     {
         "type": "creamy slime",
         "visual": (
-            "dense creamy slime with vibrant blended colors, "
-            "soft internal illumination, silky rounded folds, slow deformation"
+            "dense creamy slime with vibrant blended colors, soft internal glow, "
+            "silky rounded folds, slow deformation, visually rich and smooth"
         ),
     },
     {
@@ -103,9 +111,9 @@ SLIME_TYPES = [
 ]
 
 SCENE_PATTERNS = [
-    "resting fully on the surface while slowly folding and merging into itself",
-    "gradually spreading and compressing under its own weight in rounded folds",
-    "slowly deforming with continuous motion and visible internal depth",
+    "new slime continuously arrives from just above the frame and folds over the existing slime in rounded layers",
+    "a steady uninterrupted ribbon of slime enters from above, merging smoothly and folding over itself on the tabletop",
+    "incoming slime from above continuously drapes and folds onto the existing mass, maintaining calm hypnotic motion",
 ]
 
 # =========================================================
@@ -118,15 +126,17 @@ GLOBAL VIDEO RULES (MANDATORY):
 - Extreme macro close-up.
 - Camera completely static (no zoom, no shake).
 - Surface MUST be horizontal or gently sloped tabletop (0–15° max).
-- Slime is already present and in motion at frame 1.
+- Slime is already present on the surface AND new slime is continuously arriving from just above the frame.
+- Incoming slime folds over existing slime in slow, rounded layers with no visible start or end.
 - Slime moves autonomously due to gravity only.
 - Slime must be visually striking and colorful, never neutral or plain.
-- Use rich saturated colors, gradients, internal illumination, and visible depth.
+- Use rich saturated colors, gradients, subtle internal illumination, and visible depth.
 - No human presence: no hands, fingers, people.
 - No tools, containers, pouring devices, or interaction.
 - No new objects may enter the frame.
-- Background must be a REAL environment (indoor or outdoor), softly blurred.
+- Background must be a REAL environment (indoor or outdoor), softly blurred (bokeh).
 - Stable cinematic lighting, no flicker.
+- Avoid rotation/spinning, jitter, warping, or mechanical motion.
 """
 
 AUDIO_RULES = """
@@ -143,8 +153,8 @@ GLOBAL AUDIO RULES (MANDATORY):
 AUDIO_STYLE_ANCHOR = """
 AUDIO STYLE EXAMPLE (FOLLOW THIS VIBE):
 A slow, muted plop as thick slime makes contact with the surface — dense and rounded.
-As it moves, a low, sticky schlrrrp forms, like something heavy stretching and yielding.
-When it folds over itself, a soft, tacky thummm is heard, followed by a smooth glossy gluuuh
+As it continues, a low sticky schlrrrp forms, like something heavy stretching and yielding.
+When it folds over itself, a soft tacky thummm is heard, followed by a smooth glossy gluuuh
 as the material compresses. The sound is continuous, calm, rounded, and unhurried.
 """
 
@@ -186,11 +196,11 @@ def load_history(limit: int = 12) -> List[dict[str, Any]]:
 def save_history(entries: List[dict[str, Any]]) -> None:
     hist = load_history(200)
     hist.extend(entries)
-    HISTORY_PATH.parent.mkdir(parents=True, exist_ok=True)
+    HISTORY_PATH.parent.mkdir(parents=True, exist_ascii=False)
     HISTORY_PATH.write_text(json.dumps(hist, ensure_ascii=False, indent=2), encoding="utf-8")
 
 # =========================================================
-# BUILD UNIQUE BRIEFS
+# BUILD UNIQUE BRIEFS (NO DUPLICATES PER RUN)
 # =========================================================
 
 @dataclass
@@ -239,9 +249,9 @@ You generate premium macro ASMR video and audio prompts.
 {BASE_RULES}
 {AUDIO_RULES}
 
-IMPORTANT VISUAL PRIORITY:
-- Slime must always be colorful, luminous, and visually striking.
-- If background is dark or neutral, slime must be vibrant and glowing.
+COLOR CONTRAST RULE:
+- If the background is cold or dark (snow, night, blue hour), the slime must use warm or neon colors.
+- If the background is warm (sunset, desert), the slime must include cool or contrasting tones.
 - Never generate plain white, gray, or colorless slime.
 
 IMPORTANT AUDIO PRIORITY:
@@ -258,7 +268,9 @@ RECENT PROMPTS (AVOID SIMILARITY):
     user_prompt = f"""
 Generate exactly {N_ITEMS} matched items using the briefs below.
 Use each brief once. Do not repeat environments within this batch.
+Keep prompts concise but vivid.
 
+Briefs:
 {json.dumps([b.__dict__ for b in briefs], ensure_ascii=False, indent=2)}
 
 Return JSON only.
@@ -273,11 +285,19 @@ Return JSON only.
         temperature=TEMPERATURE,
     )
 
-    data = json.loads(resp.output_text.strip())
+    text = resp.output_text.strip()
+    data = json.loads(text)
+
+    if not isinstance(data, list) or len(data) != N_ITEMS:
+        raise ValueError(f"Model did not return a JSON list with exactly {N_ITEMS} items.")
 
     for i, item in enumerate(data, start=1):
         item["id"] = i
-        item["surface"] = sanitize_surface(item["surface"])
+        item["surface"] = sanitize_surface(item.get("surface", "horizontal tabletop"))
+        # Basic safety: ensure no forbidden terms in video prompt
+        vp = str(item.get("video_prompt", "")).lower()
+        if any(x in vp for x in ["hand", "fingers", "tool", "spatula", "knife", "bowl", "spoon", "vertical", "wall"]):
+            raise ValueError("Generated video_prompt contains forbidden content (hands/tools/wall).")
 
     OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     OUT_PATH.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
@@ -285,10 +305,10 @@ Return JSON only.
     save_history([
         {
             "run": run_id,
-            "surface": d["surface"],
-            "background": d["background"],
-            "palette": d["palette"],
-            "slime_type": d["slime_type"],
+            "surface": d.get("surface"),
+            "background": d.get("background"),
+            "palette": d.get("palette"),
+            "slime_type": d.get("slime_type"),
         }
         for d in data
     ])
