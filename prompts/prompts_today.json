@@ -1,29 +1,29 @@
 [
   {
     "id": 1,
-    "surface": "horizontal glazed ceramic tabletop with luxury sheen",
-    "background": "quiet mountain viewpoint with distant peaks under soft evening light, softly blurred",
-    "palette": "deep sapphire blue with warm amber gold and subtle violet",
+    "surface": "horizontal smoked glass tabletop with deep glossy reflections",
+    "background": "luxury penthouse lounge with glowing city skyline at night, softly blurred",
+    "palette": "deep emerald green blending into sapphire blue with glowing gold highlights",
     "slime_type": "pearlescent slime",
-    "video_prompt": "Extreme macro close-up of thick pearlescent slime with subtle realistic shimmer resting fully on a horizontal glazed ceramic tabletop with luxury sheen. The slime slowly folds over itself, moving autonomously due to gravity. The background shows a softly blurred quiet mountain viewpoint with distant peaks under soft evening light. The surface is perfectly horizontal, camera static, lighting stable and cinematic.",
-    "audio_prompt": "A dense, muted plop as the thick pearlescent slime settles on the ceramic surface — smooth and rounded, never sharp. A slow, sticky schlrrrp emerges as the slime folds over itself, thick and cohesive. Soft, tacky thummms follow as the slime compresses gently, the sounds continuous, calm, and unhurried with a subtle shimmering texture."
+    "video_prompt": "Extreme macro close-up of thick pearlescent slime with colorful iridescence and subtle internal glow, gradually spreading and compressing under its own weight in rounded folds on a horizontal smoked glass tabletop with deep glossy reflections. The slime shows rainbow-like light shifts in deep emerald green blending into sapphire blue with glowing gold highlights. Background is a softly blurred luxury penthouse lounge with glowing city skyline at night. Camera is completely static.",
+    "audio_prompt": "A dense, rounded plop as the thick pearlescent slime makes gentle contact with the glass surface. A muted, sticky schlrrrp follows as the slime slowly spreads and compresses in smooth, rounded folds. The sound is continuous, calm, and organic with a soft, glossy gluuuh as the material yields and thickens under gravity."
   },
   {
     "id": 2,
-    "surface": "horizontal mother-of-pearl inlay tabletop with subtle iridescence",
-    "background": "luxury penthouse lounge with panoramic city skyline at dusk, softly blurred",
-    "palette": "honey amber with espresso brown and warm copper",
+    "surface": "horizontal glazed ceramic tabletop with luxury sheen",
+    "background": "minimalist studio with colored practical lights and moody ambience, softly blurred",
+    "palette": "ultramarine blue fading into teal with silver light veins",
     "slime_type": "creamy slime",
-    "video_prompt": "Extreme macro close-up of dense creamy slime with smooth rounded folds and soft sheen gradually spreading and compressing under its own weight on a horizontal mother-of-pearl inlay tabletop with subtle iridescence. The background features a softly blurred luxury penthouse lounge with panoramic city skyline at dusk. The surface is horizontal, camera completely static, and lighting steady and cinematic.",
-    "audio_prompt": "A slow, thick plop as the dense creamy slime spreads across the iridescent surface — rounded and heavy without sharpness. A low, cohesive schlrrrp accompanies the gradual compression, rich and tactile. The slime’s folds create soft, muted thummms and smooth gluuuhs, continuous and calming with a warm, organic texture."
+    "video_prompt": "Extreme macro close-up of dense creamy slime with vibrant blended colors and soft internal illumination, resting fully on a horizontal glazed ceramic tabletop with luxury sheen. The slime slowly folds and merges into itself in silky rounded folds, showing ultramarine blue fading into teal with silver light veins. Background is a softly blurred minimalist studio with colored practical lights and moody ambience. Camera is completely static.",
+    "audio_prompt": "A soft, muted plop as the creamy slime settles on the ceramic surface. Continuous, slow, and rounded folding sounds with a smooth, tacky thummm as layers merge gently. The audio is calm and cohesive, with a gentle, sticky schlrrrp as the slime moves and blends quietly under gravity."
   },
   {
     "id": 3,
-    "surface": "horizontal satin-finished onyx stone tabletop with subtle natural veins",
-    "background": "quiet mountain viewpoint with distant peaks under soft evening light, softly blurred",
-    "palette": "jade green with pearl white and champagne gold",
+    "surface": "horizontal polished black marble tabletop with fine white veining",
+    "background": "modern art gallery with dramatic spotlights and deep shadows, softly blurred",
+    "palette": "lava orange and molten amber with deep crimson shadows and inner glow",
     "slime_type": "thick glossy slime",
-    "video_prompt": "Extreme macro close-up of very thick cohesive glossy slime with heavy mass and rounded folds gradually spreading and compressing on a horizontal satin-finished onyx stone tabletop with subtle natural veins. The background is a softly blurred quiet mountain viewpoint with distant peaks under soft evening light. The surface is gently sloped within 0-15°, camera fixed, lighting smooth and cinematic.",
-    "audio_prompt": "A dense, muted plop as the thick glossy slime settles and spreads over the onyx surface — heavy and rounded, never sharp. A slow, sticky schlrrrp resonates as the slime compresses, thick and cohesive. Soft, tacky thummms and smooth gluuuhs follow as the folds deepen, continuous and calming with a rich, glossy texture."
+    "video_prompt": "Extreme macro close-up of very thick glossy slime with rich saturated colors and smooth gradients slowly deforming with continuous motion on a horizontal polished black marble tabletop with fine white veining. The slime displays lava orange and molten amber colors with deep crimson shadows and subtle internal glow, showing heavy rounded folds and luminous highlights. Background is a softly blurred modern art gallery with dramatic spotlights and deep shadows. Camera is completely static.",
+    "audio_prompt": "A heavy, dense plop as the thick glossy slime moves on the marble surface. Continuous, slow, rounded folding and compressing sounds with a deep, sticky schlrrrp and a smooth, glossy gluuuh as the material yields and flows under gravity. The sound is rich, organic, and calming with visible internal depth."
   }
 ]
