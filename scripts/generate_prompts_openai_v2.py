@@ -139,23 +139,26 @@ GLOBAL VIDEO RULES (MANDATORY):
 - Avoid rotation/spinning, jitter, warping, or mechanical motion.
 """
 
+# ✅ UPDATED (simple properties > actions; allow "slightly moist" but forbid watery cues)
 AUDIO_RULES = """
 GLOBAL AUDIO RULES (MANDATORY):
-- Continuous ASMR slime sound: heavy, cohesive, organic, and calming.
-- Narrative, tactile description style with onomatopoeia.
-- Avoid ALL water-like language: water, wet, liquid, flow, flowing, pour, poured,
-  drip, dripping, splash, splashing, bubbles, gurgle, stream, honey, syrup.
-- Avoid mechanical/hard sounds: knock, bang, click, scrape, grind, metallic.
-- No voice, no music, no ambience.
-- Studio-clean, close-mic, high fidelity.
+- Keep audio prompts SIMPLE and property-based (material tags), not narrative.
+- 2–3 short lines max.
+- Thick, cohesive slime texture with soft rounded folds and calm, slow settling.
+- Slightly moist texture is allowed (slime can sound a bit moist), but NEVER watery or liquid-like.
+- Avoid ALL water-like / liquid-motion words: water, watery, liquid, flow, flowing, pour, pouring, poured,
+  drip, dripping, stream, splash, splashing, slosh, gurgle, bubbles, honey, syrup.
+- Avoid mechanical/hard sounds: knock, bang, thump, click, scrape, grind, metallic, squeak.
+- No voice, no music, no ambience. Studio-quality close-mic recording.
+- Duration: 8 seconds.
 """
 
+# ✅ UPDATED anchor: short, template-like (ElevenLabs-friendly)
 AUDIO_STYLE_ANCHOR = """
-AUDIO STYLE EXAMPLE (FOLLOW THIS VIBE):
-A slow, muted plop as thick slime makes contact with the surface — dense and rounded.
-As it continues, a low sticky schlrrrp forms, like something heavy stretching and yielding.
-When it folds over itself, a soft tacky thummm is heard, followed by a smooth glossy gluuuh
-as the material compresses. The sound is continuous, calm, rounded, and unhurried.
+AUDIO TEMPLATE STYLE (FOLLOW THIS FORMAT):
+Silky, smooth, thick slime ASMR sounds with soft rounded folds and slow, calm settling.
+Slightly moist, cohesive texture with gentle compression and smooth release.
+Studio-quality close-mic recording, no voice, no music, no ambience. Duration: 8 seconds.
 """
 
 JSON_SCHEMA = """
@@ -254,8 +257,10 @@ COLOR CONTRAST RULE:
 - If the background is warm (sunset, desert), the slime must include cool or contrasting tones.
 - Never generate plain white, gray, or colorless slime.
 
-IMPORTANT AUDIO PRIORITY:
-- Follow the AUDIO STYLE EXAMPLE closely.
+AUDIO PRIORITY (VERY IMPORTANT):
+- Audio prompts must follow the AUDIO TEMPLATE STYLE.
+- Keep audio prompt short, property-based, and cohesive (not narrative).
+- Allow "slightly moist" but never watery or liquid-like.
 
 RECENT PROMPTS (AVOID SIMILARITY):
 {json.dumps(history, ensure_ascii=False, indent=2)}
@@ -269,6 +274,13 @@ RECENT PROMPTS (AVOID SIMILARITY):
 Generate exactly {N_ITEMS} matched items using the briefs below.
 Use each brief once. Do not repeat environments within this batch.
 Keep prompts concise but vivid.
+
+CRITICAL AUDIO INSTRUCTIONS:
+- Write audio_prompt in the same short style as the template.
+- 2–3 short lines max.
+- Include: thick/cohesive, soft rounded folds, slow calm settling, slightly moist.
+- Include: "Studio-quality close-mic recording, no voice, no music, no ambience. Duration: 8 seconds."
+- Do NOT use: water/watery/liquid/flow/pour/drip/splash/stream/bubbles/honey/syrup or any mechanical sound words.
 
 Briefs:
 {json.dumps([b.__dict__ for b in briefs], ensure_ascii=False, indent=2)}
@@ -294,10 +306,17 @@ Return JSON only.
     for i, item in enumerate(data, start=1):
         item["id"] = i
         item["surface"] = sanitize_surface(item.get("surface", "horizontal tabletop"))
+
         # Basic safety: ensure no forbidden terms in video prompt
         vp = str(item.get("video_prompt", "")).lower()
         if any(x in vp for x in ["hand", "fingers", "tool", "spatula", "knife", "bowl", "spoon", "vertical", "wall"]):
             raise ValueError("Generated video_prompt contains forbidden content (hands/tools/wall).")
+
+        # Optional extra audio safety: reject if it contains forbidden watery words
+        ap = str(item.get("audio_prompt", "")).lower()
+        forbidden_audio = ["water", "watery", "liquid", "flow", "pour", "drip", "splash", "stream", "bubbles", "honey", "syrup"]
+        if any(w in ap for w in forbidden_audio):
+            raise ValueError("Generated audio_prompt contains forbidden watery words.")
 
     OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     OUT_PATH.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
