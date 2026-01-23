@@ -1,29 +1,29 @@
 [
   {
     "id": 1,
-    "surface": "horizontal mother-of-pearl inlay tabletop with subtle iridescence",
-    "background": "upscale cocktail bar with neon accents and glass reflections, softly blurred",
+    "surface": "horizontal glazed ceramic tabletop with luxury sheen",
+    "background": "quiet mountain viewpoint with distant peaks under soft evening light, softly blurred",
     "palette": "deep sapphire blue with warm amber gold and subtle violet",
-    "slime_type": "thick glossy slime",
-    "video_prompt": "Extreme macro close-up of very thick cohesive slime resting fully on a horizontal mother-of-pearl inlay tabletop with subtle iridescence. The slime slowly deforms and folds over itself with thick rounded folds and delayed recovery, moving autonomously under gravity only. The background is an upscale cocktail bar with neon accents and glass reflections, softly blurred. The palette features deep sapphire blue with warm amber gold and subtle violet. The camera is completely static, with no zoom or shake, and the surface is horizontal. No human presence or tools appear. Stable cinematic lighting.",
-    "audio_prompt": "Continuous thick slime sound effect recorded close-mic. Slow pressure-driven mass movement of dense, cohesive gelatinous texture with heavy body and muted highs. The sound features constant slow deformation and folding over itself under pressure. No liquid flow, dripping, pouring, splashing, or bubbles. Studio-clean audio of exactly 10 seconds duration."
+    "slime_type": "pearlescent slime",
+    "video_prompt": "Extreme macro close-up of thick pearlescent slime with subtle realistic shimmer resting fully on a horizontal glazed ceramic tabletop with luxury sheen. The slime slowly folds over itself, moving autonomously due to gravity. The background shows a softly blurred quiet mountain viewpoint with distant peaks under soft evening light. The surface is perfectly horizontal, camera static, lighting stable and cinematic.",
+    "audio_prompt": "A dense, muted plop as the thick pearlescent slime settles on the ceramic surface — smooth and rounded, never sharp. A slow, sticky schlrrrp emerges as the slime folds over itself, thick and cohesive. Soft, tacky thummms follow as the slime compresses gently, the sounds continuous, calm, and unhurried with a subtle shimmering texture."
   },
   {
     "id": 2,
-    "surface": "horizontal champagne-toned brushed metal tabletop",
-    "background": "luxury rooftop terrace overlooking city lights at dusk, softly blurred",
-    "palette": "jade green with pearl white and champagne gold",
-    "slime_type": "pearlescent slime",
-    "video_prompt": "Extreme macro close-up of thick pearlescent cohesive slime resting fully on a horizontal champagne-toned brushed metal tabletop. The slime forms thick rounded folds that continuously deform under gravity, displaying a smooth glossy surface with subtle realistic shimmer. The background is a luxury rooftop terrace overlooking city lights at dusk, softly blurred. The palette includes jade green with pearl white and champagne gold. The camera is completely static, no zoom or shake, surface horizontal. No human presence or tools. Stable cinematic lighting.",
-    "audio_prompt": "Continuous premium slime sound effect recorded close-mic. Dense gelatinous mass slowly deforming with silky cohesive texture and constant pressure movement. Soft, damped, low-frequency body throughout. No liquid sounds, dripping, pouring, or bubbles. Studio-clean audio lasting exactly 10 seconds."
+    "surface": "horizontal mother-of-pearl inlay tabletop with subtle iridescence",
+    "background": "luxury penthouse lounge with panoramic city skyline at dusk, softly blurred",
+    "palette": "honey amber with espresso brown and warm copper",
+    "slime_type": "creamy slime",
+    "video_prompt": "Extreme macro close-up of dense creamy slime with smooth rounded folds and soft sheen gradually spreading and compressing under its own weight on a horizontal mother-of-pearl inlay tabletop with subtle iridescence. The background features a softly blurred luxury penthouse lounge with panoramic city skyline at dusk. The surface is horizontal, camera completely static, and lighting steady and cinematic.",
+    "audio_prompt": "A slow, thick plop as the dense creamy slime spreads across the iridescent surface — rounded and heavy without sharpness. A low, cohesive schlrrrp accompanies the gradual compression, rich and tactile. The slime’s folds create soft, muted thummms and smooth gluuuhs, continuous and calming with a warm, organic texture."
   },
   {
     "id": 3,
-    "surface": "horizontal glazed ceramic tabletop with luxury sheen",
-    "background": "minimalist product studio with subtle colored practical lights, softly blurred",
-    "palette": "emerald green, sapphire blue, and bronze glints",
-    "slime_type": "creamy slime",
-    "video_prompt": "Extreme macro close-up of dense creamy slime resting fully on a horizontal glazed ceramic tabletop with luxury sheen. The slime gradually compresses under its own weight and spreads in rounded soft folds with smooth drape and cohesive body. The background is a minimalist product studio with subtle colored practical lights, softly blurred. The palette features emerald green, sapphire blue, and bronze glints. The camera is completely static, no zoom or shake, surface horizontal. No human presence or tools. Stable cinematic lighting.",
-    "audio_prompt": "Continuous creamy slime sound effect recorded close-mic. Smooth pressure-driven deformation with soft dense body and gentle folding over itself. Even uninterrupted texture with muted highs and warm mid-low frequencies. No water-like behavior, dripping, or splashing. Studio-clean audio duration exactly 10 seconds."
+    "surface": "horizontal satin-finished onyx stone tabletop with subtle natural veins",
+    "background": "quiet mountain viewpoint with distant peaks under soft evening light, softly blurred",
+    "palette": "jade green with pearl white and champagne gold",
+    "slime_type": "thick glossy slime",
+    "video_prompt": "Extreme macro close-up of very thick cohesive glossy slime with heavy mass and rounded folds gradually spreading and compressing on a horizontal satin-finished onyx stone tabletop with subtle natural veins. The background is a softly blurred quiet mountain viewpoint with distant peaks under soft evening light. The surface is gently sloped within 0-15°, camera fixed, lighting smooth and cinematic.",
+    "audio_prompt": "A dense, muted plop as the thick glossy slime settles and spreads over the onyx surface — heavy and rounded, never sharp. A slow, sticky schlrrrp resonates as the slime compresses, thick and cohesive. Soft, tacky thummms and smooth gluuuhs follow as the folds deepen, continuous and calming with a rich, glossy texture."
   }
 ]
