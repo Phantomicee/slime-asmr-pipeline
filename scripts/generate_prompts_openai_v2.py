@@ -196,7 +196,7 @@ def load_history(limit: int = 12) -> List[dict[str, Any]]:
 def save_history(entries: List[dict[str, Any]]) -> None:
     hist = load_history(200)
     hist.extend(entries)
-    HISTORY_PATH.parent.mkdir(parents=True, exist_ascii=False)
+    HISTORY_PATH.parent.mkdir(parents=True, exist_ok=True)
     HISTORY_PATH.write_text(json.dumps(hist, ensure_ascii=False, indent=2), encoding="utf-8")
 
 # =========================================================
