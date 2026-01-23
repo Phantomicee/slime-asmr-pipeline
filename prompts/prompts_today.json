@@ -1,29 +1,29 @@
 [
   {
     "id": 1,
-    "surface": "horizontal smoked glass tabletop with deep glossy reflections",
-    "background": "luxury penthouse lounge with glowing city skyline at night, softly blurred",
-    "palette": "deep emerald green blending into sapphire blue with glowing gold highlights",
-    "slime_type": "pearlescent slime",
-    "video_prompt": "Extreme macro close-up of thick pearlescent slime with colorful iridescence and subtle internal glow, gradually spreading and compressing under its own weight in rounded folds on a horizontal smoked glass tabletop with deep glossy reflections. The slime shows rainbow-like light shifts in deep emerald green blending into sapphire blue with glowing gold highlights. Background is a softly blurred luxury penthouse lounge with glowing city skyline at night. Camera is completely static.",
-    "audio_prompt": "A dense, rounded plop as the thick pearlescent slime makes gentle contact with the glass surface. A muted, sticky schlrrrp follows as the slime slowly spreads and compresses in smooth, rounded folds. The sound is continuous, calm, and organic with a soft, glossy gluuuh as the material yields and thickens under gravity."
+    "surface": "horizontal satin-finished onyx stone tabletop with translucent layers",
+    "background": "quiet forest clearing at sunrise with warm light shafts, softly blurred",
+    "palette": "royal purple melting into hot pink with luminous accents",
+    "slime_type": "thick glossy slime",
+    "video_prompt": "Extreme macro close-up of royal purple and hot pink thick glossy slime folding slowly with heavy rounded layers on a satin-finished onyx stone tabletop. Incoming slime continuously drapes over existing mass in smooth, luminous, hypnotic motion. Background softly blurred quiet forest clearing at sunrise with warm light shafts.",
+    "audio_prompt": "A slow, muted plop as thick glossy slime lands, dense and rounded. A low sticky schlrrrp forms as it yields, followed by a soft tacky thummm and smooth glossy gluuuh as folds compress. Continuous, calm, rounded and unhurried slime sounds."
   },
   {
     "id": 2,
-    "surface": "horizontal glazed ceramic tabletop with luxury sheen",
+    "surface": "horizontal dark basalt stone tabletop with matte premium texture",
     "background": "minimalist studio with colored practical lights and moody ambience, softly blurred",
-    "palette": "ultramarine blue fading into teal with silver light veins",
+    "palette": "electric blue with neon lime accents and faint internal glow",
     "slime_type": "creamy slime",
-    "video_prompt": "Extreme macro close-up of dense creamy slime with vibrant blended colors and soft internal illumination, resting fully on a horizontal glazed ceramic tabletop with luxury sheen. The slime slowly folds and merges into itself in silky rounded folds, showing ultramarine blue fading into teal with silver light veins. Background is a softly blurred minimalist studio with colored practical lights and moody ambience. Camera is completely static.",
-    "audio_prompt": "A soft, muted plop as the creamy slime settles on the ceramic surface. Continuous, slow, and rounded folding sounds with a smooth, tacky thummm as layers merge gently. The audio is calm and cohesive, with a gentle, sticky schlrrrp as the slime moves and blends quietly under gravity."
+    "video_prompt": "Extreme macro close-up of dense creamy slime in electric blue with neon lime accents and soft internal glow folding slowly in silky rounded layers on a dark basalt stone tabletop with matte texture. New slime continuously arrives from above, folding smoothly over existing slime. Background softly blurred minimalist studio with colored practical lights and moody ambience.",
+    "audio_prompt": "Slow, muted plops as dense creamy slime lands, thick and cohesive. A low sticky schlrrrp stretches and yields, followed by soft tacky thummm and smooth glossy gluuuh as layers fold and compress. Continuous calm, rounded, unhurried slime sounds."
   },
   {
     "id": 3,
-    "surface": "horizontal polished black marble tabletop with fine white veining",
-    "background": "modern art gallery with dramatic spotlights and deep shadows, softly blurred",
-    "palette": "lava orange and molten amber with deep crimson shadows and inner glow",
-    "slime_type": "thick glossy slime",
-    "video_prompt": "Extreme macro close-up of very thick glossy slime with rich saturated colors and smooth gradients slowly deforming with continuous motion on a horizontal polished black marble tabletop with fine white veining. The slime displays lava orange and molten amber colors with deep crimson shadows and subtle internal glow, showing heavy rounded folds and luminous highlights. Background is a softly blurred modern art gallery with dramatic spotlights and deep shadows. Camera is completely static.",
-    "audio_prompt": "A heavy, dense plop as the thick glossy slime moves on the marble surface. Continuous, slow, rounded folding and compressing sounds with a deep, sticky schlrrrp and a smooth, glossy gluuuh as the material yields and flows under gravity. The sound is rich, organic, and calming with visible internal depth."
+    "surface": "horizontal glazed porcelain tabletop with subtle crackle texture",
+    "background": "rocky mountain overlook at warm sunset with orange-pink sky glow, softly blurred",
+    "palette": "deep emerald green blending into sapphire blue with glowing gold highlights",
+    "slime_type": "pearlescent slime",
+    "video_prompt": "Extreme macro close-up of thick pearlescent slime in deep emerald green blending into sapphire blue with glowing gold highlights folding slowly in rainbow-like iridescent layers on a glazed porcelain tabletop with subtle crackle texture. A steady ribbon of slime enters continuously from above, merging smoothly over itself. Background softly blurred rocky mountain overlook at warm sunset with orange-pink sky glow.",
+    "audio_prompt": "Slow muted plops as thick pearlescent slime lands dense and rounded. A low sticky schlrrrp forms as it stretches and yields, followed by soft tacky thummm and smooth glossy gluuuh as folds compress. Continuous calm, rounded, unhurried slime sounds."
   }
 ]
