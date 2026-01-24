@@ -1,29 +1,29 @@
 [
   {
     "id": 1,
-    "surface": "horizontal satin-finished onyx stone tabletop with translucent layers",
-    "background": "quiet forest clearing at sunrise with warm light shafts, softly blurred",
-    "palette": "ultramarine blue fading into teal with silver light veins",
+    "surface": "horizontal glazed ceramic tabletop with luxury sheen",
+    "background": "boutique hotel suite with warm lamp glow and textured fabrics, softly blurred",
+    "palette": "sunset gradient slime: coral, peach, and warm gold with glowing edges",
     "slime_type": "pearlescent slime",
-    "video_prompt": "Extreme macro close-up of thick pearlescent slime with colorful iridescence folding slowly in rounded layers over a satin-finished onyx tabletop. New slime continuously arrives from just above the frame, glowing softly with rich ultramarine and teal hues accented by silver veins. Background shows softly blurred warm forest clearing at sunrise.",
-    "audio_prompt": "Thick, cohesive slime ASMR sounds with soft rounded folds and slow, calm settling. Slightly moist texture with gentle compression and smooth release. Studio-quality close-mic recording, no voice, no music, no ambience. Duration: 8 seconds."
+    "video_prompt": "Extreme macro close-up of thick pearlescent slime with colorful iridescence and subtle internal glow. New sunset gradient slime in coral, peach, and warm gold folds slowly over existing slime on a glossy ceramic tabletop with luxury sheen. Background is a warmly lit boutique hotel suite, softly blurred. Camera static, horizontal surface.",
+    "audio_prompt": "Thick, cohesive slime sounds with soft rounded folds and slow, calm settling. Slightly moist texture with gentle compression and smooth release. Studio-quality close-mic recording, no voice, no music, no ambience. Duration: 8 seconds."
   },
   {
     "id": 2,
-    "surface": "horizontal glazed ceramic tabletop with luxury sheen",
-    "background": "desert stone plateau during fiery sunset with dramatic sky gradients, softly blurred",
-    "palette": "jade green, turquoise, and pearl highlights with soft internal illumination",
-    "slime_type": "creamy slime",
-    "video_prompt": "Extreme macro close-up of dense creamy slime in jade green and turquoise with pearl highlights folding in silky rounded layers on a glazed ceramic tabletop. Continuous steady ribbon of slime merges smoothly from above, glowing softly against a blurred desert plateau at fiery sunset.",
-    "audio_prompt": "Thick, cohesive slime ASMR sounds with soft rounded folds and slow, calm settling. Slightly moist texture with gentle compression and smooth release. Studio-quality close-mic recording, no voice, no music, no ambience. Duration: 8 seconds."
+    "surface": "horizontal mother-of-pearl inlay tabletop with subtle iridescence",
+    "background": "misty mountain ridge at early dawn with soft fog and muted colors, softly blurred",
+    "palette": "lava orange and molten amber with deep crimson shadows and inner glow",
+    "slime_type": "thick glossy slime",
+    "video_prompt": "Extreme macro close-up of very thick cohesive slime with rich saturated lava orange, molten amber, and deep crimson shadows. Incoming slime continuously drapes and folds in heavy rounded layers with luminous highlights over mother-of-pearl inlay tabletop. Background shows softly blurred misty mountain ridge at dawn. Camera static, horizontal surface.",
+    "audio_prompt": "Thick, cohesive slime sounds with soft rounded folds and slow, calm settling. Slightly moist texture with gentle compression and smooth release. Studio-quality close-mic recording, no voice, no music, no ambience. Duration: 8 seconds."
   },
   {
     "id": 3,
-    "surface": "horizontal polished black marble tabletop with fine white veining",
-    "background": "cliffside terrace overlooking the ocean at golden hour, softly blurred",
-    "palette": "deep emerald green blending into sapphire blue with glowing gold highlights",
-    "slime_type": "thick glossy slime",
-    "video_prompt": "Extreme macro close-up of very thick glossy slime with rich emerald and sapphire gradients and glowing gold highlights folding in heavy rounded layers on polished black marble. Incoming slime drapes continuously from above, maintaining calm hypnotic motion against a softly blurred ocean cliffside terrace at golden hour.",
-    "audio_prompt": "Thick, cohesive slime ASMR sounds with soft rounded folds and slow, calm settling. Slightly moist texture with gentle compression and smooth release. Studio-quality close-mic recording, no voice, no music, no ambience. Duration: 8 seconds."
+    "surface": "horizontal brushed metal tabletop with soft cinematic reflections",
+    "background": "upscale cocktail bar with neon accents and glass reflections, softly blurred",
+    "palette": "ultramarine blue fading into teal with silver light veins",
+    "slime_type": "creamy slime",
+    "video_prompt": "Extreme macro close-up of dense creamy slime with vibrant ultramarine blue fading into teal and silver light veins. A steady ribbon of slime enters from above, merging and folding softly on brushed metal tabletop with cinematic reflections. Background is a softly blurred upscale cocktail bar with neon accents. Camera static, horizontal surface.",
+    "audio_prompt": "Thick, cohesive slime sounds with soft rounded folds and slow, calm settling. Slightly moist texture with gentle compression and smooth release. Studio-quality close-mic recording, no voice, no music, no ambience. Duration: 8 seconds."
   }
 ]
