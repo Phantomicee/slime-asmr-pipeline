@@ -336,9 +336,10 @@ Return JSON only.
         # Basic safety: ensure no forbidden terms in video prompt
         vp = str(item.get("video_prompt", "")).lower()
         forbidden_video = [
-            "hand", "fingers", "tool", "spatula", "knife", "bowl", "spoon", "vertical", "wall",
-            "corner", "edge", "off-center", "off centre", "drift to the side", "drifts to the side"
-        ]
+    "hand", "hands", "finger", "fingers",
+    "tool", "tools", "spatula", "knife", "bowl", "spoon",
+    "vertical", "wall", "upright", "panel"
+]
         if any(x in vp for x in forbidden_video):
             raise ValueError("Generated video_prompt contains forbidden content (hands/tools/wall/edge/corner/off-center).")
 
