@@ -139,7 +139,12 @@ GLOBAL VIDEO RULES (MANDATORY):
 - Avoid rotation/spinning, jitter, warping, or mechanical motion.
 """
 
-# ✅ UPDATED (simple properties > actions; allow "slightly moist" but forbid watery cues)
+# ✅ Centering rule (short, strong, Pika-friendly)
+COMPOSITION_RULE = (
+    "Composition: perfectly centered macro framing; slime mound and folds stay in the exact center "
+    "with wide empty margins on all sides; no drift to edges or corners; no off-center framing."
+)
+
 AUDIO_RULES = """
 GLOBAL AUDIO RULES (MANDATORY):
 - Keep audio prompts SIMPLE and property-based (material tags), not narrative.
@@ -153,7 +158,6 @@ GLOBAL AUDIO RULES (MANDATORY):
 - Duration: 8 seconds.
 """
 
-# ✅ UPDATED anchor: short, template-like (ElevenLabs-friendly)
 AUDIO_STYLE_ANCHOR = """
 AUDIO TEMPLATE STYLE (FOLLOW THIS FORMAT):
 Silky, smooth, thick slime ASMR sounds with soft rounded folds and slow, calm settling.
@@ -201,6 +205,13 @@ def save_history(entries: List[dict[str, Any]]) -> None:
     hist.extend(entries)
     HISTORY_PATH.parent.mkdir(parents=True, exist_ok=True)
     HISTORY_PATH.write_text(json.dumps(hist, ensure_ascii=False, indent=2), encoding="utf-8")
+
+def ensure_composition_line(video_prompt: str) -> str:
+    vp = (video_prompt or "").strip()
+    # Always append the composition rule once (keep it short and consistent)
+    if "composition:" not in vp.lower():
+        vp = vp.rstrip(".") + ". " + COMPOSITION_RULE
+    return vp
 
 # =========================================================
 # BUILD UNIQUE BRIEFS (NO DUPLICATES PER RUN)
@@ -250,6 +261,13 @@ def main() -> None:
 You generate premium macro ASMR video and audio prompts.
 
 {BASE_RULES}
+
+CENTERING / COMPOSITION (MANDATORY):
+- Always keep the main slime mass centered, with wide safe margins from frame edges.
+- Never place slime near edges/corners; no off-center framing; no drift.
+- Include this exact line in every video_prompt (verbatim):
+{COMPOSITION_RULE}
+
 {AUDIO_RULES}
 
 COLOR CONTRAST RULE:
@@ -274,6 +292,11 @@ RECENT PROMPTS (AVOID SIMILARITY):
 Generate exactly {N_ITEMS} matched items using the briefs below.
 Use each brief once. Do not repeat environments within this batch.
 Keep prompts concise but vivid.
+
+CRITICAL VIDEO INSTRUCTIONS:
+- The slime must be centered in frame (not near edges/corners) and remain centered.
+- No off-center framing and no lateral drift.
+- Include the composition line.
 
 CRITICAL AUDIO INSTRUCTIONS:
 - Write audio_prompt in the same short style as the template.
@@ -307,16 +330,26 @@ Return JSON only.
         item["id"] = i
         item["surface"] = sanitize_surface(item.get("surface", "horizontal tabletop"))
 
+        # Force composition line appended (prevents off-center failures)
+        item["video_prompt"] = ensure_composition_line(str(item.get("video_prompt", "")))
+
         # Basic safety: ensure no forbidden terms in video prompt
         vp = str(item.get("video_prompt", "")).lower()
-        if any(x in vp for x in ["hand", "fingers", "tool", "spatula", "knife", "bowl", "spoon", "vertical", "wall"]):
-            raise ValueError("Generated video_prompt contains forbidden content (hands/tools/wall).")
+        forbidden_video = [
+            "hand", "fingers", "tool", "spatula", "knife", "bowl", "spoon", "vertical", "wall",
+            "corner", "edge", "off-center", "off centre", "drift to the side", "drifts to the side"
+        ]
+        if any(x in vp for x in forbidden_video):
+            raise ValueError("Generated video_prompt contains forbidden content (hands/tools/wall/edge/corner/off-center).")
 
-        # Optional extra audio safety: reject if it contains forbidden watery words
+        # Audio safety: reject if it contains forbidden watery words
         ap = str(item.get("audio_prompt", "")).lower()
-        forbidden_audio = ["water", "watery", "liquid", "flow", "pour", "drip", "splash", "stream", "bubbles", "honey", "syrup"]
+        forbidden_audio = [
+            "water", "watery", "liquid", "flow", "pour", "drip", "splash", "stream", "bubbles", "honey", "syrup",
+            "knock", "bang", "thump", "click", "scrape", "grind", "metallic", "squeak"
+        ]
         if any(w in ap for w in forbidden_audio):
-            raise ValueError("Generated audio_prompt contains forbidden watery words.")
+            raise ValueError("Generated audio_prompt contains forbidden watery/mechanical words.")
 
     OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     OUT_PATH.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
