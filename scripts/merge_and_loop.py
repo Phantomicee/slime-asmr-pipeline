@@ -19,7 +19,7 @@ def main():
 
     with open(PROMPTS_PATH, "r", encoding="utf-8") as f:
         data = json.load(f)
-    shorts = data.get("shorts", [])
+    shorts = data
     if len(shorts) < 1:
         print("No shorts in prompts file.")
         sys.exit(1)
